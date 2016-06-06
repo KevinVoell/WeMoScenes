@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D013F059DB37D0B0DFB74F5 /* Pods_WeMoInteractionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA7BBE2F0854552CAE165B5 /* Pods_WeMoInteractionTests.framework */; };
+		AB1717129AA155C0D9C88C8B /* Pods_WeMoInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B105AD4959B299A5248764 /* Pods_WeMoInteraction.framework */; };
+		E913907C1D03CDBA00C8FA33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913907B1D03CDBA00C8FA33 /* Security.framework */; };
+		E913908C1D049AFD00C8FA33 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913908A1D049AFD00C8FA33 /* Device.swift */; };
+		E913908D1D049AFD00C8FA33 /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913908B1D049AFD00C8FA33 /* ModelBase.swift */; };
+		E913908F1D049B6000C8FA33 /* DeviceStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913908E1D049B6000C8FA33 /* DeviceStates.swift */; };
+		E91390961D04CF3200C8FA33 /* DeviceModel+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390951D04CF3200C8FA33 /* DeviceModel+JSON.swift */; };
+		E91390981D05242000C8FA33 /* InteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390971D05242000C8FA33 /* InteractionDelegate.swift */; };
+		E950D9A31D027443003DD7EE /* DeviceInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9A21D027443003DD7EE /* DeviceInteraction.swift */; };
+		E950D9A91D02759D003DD7EE /* WemoStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9A61D02759D003DD7EE /* WemoStateResponse.swift */; };
 		E9B70DB31D0129F700E3BAEE /* WeMoInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B70DB21D0129F700E3BAEE /* WeMoInteraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9B70DBA1D0129F700E3BAEE /* WeMoInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B70DAF1D0129F700E3BAEE /* WeMoInteraction.framework */; };
 		E9B70DBF1D0129F700E3BAEE /* WeMoInteractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B70DBE1D0129F700E3BAEE /* WeMoInteractionTests.swift */; };
+		E9B70DCA1D012A9100E3BAEE /* WeMoMulticastHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B70DC91D012A9100E3BAEE /* WeMoMulticastHandler.swift */; };
+		E9B70DCD1D012AA000E3BAEE /* WeMoDiscoveryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B70DCC1D012AA000E3BAEE /* WeMoDiscoveryDelegate.swift */; };
+		E9B70DD11D012BAE00E3BAEE /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B70DD01D012BAE00E3BAEE /* Interaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +36,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		233EAFF787704B7B47D20B89 /* Pods-WeMoInteractionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoInteractionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeMoInteractionTests/Pods-WeMoInteractionTests.release.xcconfig"; sourceTree = "<group>"; };
+		26B105AD4959B299A5248764 /* Pods_WeMoInteraction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeMoInteraction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		275EC5EF0C48923752244D1C /* Pods-WeMoInteraction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoInteraction.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeMoInteraction/Pods-WeMoInteraction.release.xcconfig"; sourceTree = "<group>"; };
+		4CA7BBE2F0854552CAE165B5 /* Pods_WeMoInteractionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeMoInteractionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		870B5D592E92E02D0FAA5215 /* Pods-WeMoInteractionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoInteractionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeMoInteractionTests/Pods-WeMoInteractionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B6EE8FDF4730FCEC677BA0A /* Pods-WeMoInteraction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoInteraction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeMoInteraction/Pods-WeMoInteraction.debug.xcconfig"; sourceTree = "<group>"; };
+		E913907B1D03CDBA00C8FA33 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E913908A1D049AFD00C8FA33 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = "WeMoInteraction/Data Models/Device.swift"; sourceTree = SOURCE_ROOT; };
+		E913908B1D049AFD00C8FA33 /* ModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelBase.swift; path = "WeMoInteraction/Data Models/ModelBase.swift"; sourceTree = SOURCE_ROOT; };
+		E913908E1D049B6000C8FA33 /* DeviceStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceStates.swift; path = "WeMoInteraction/Data Models/DeviceStates.swift"; sourceTree = SOURCE_ROOT; };
+		E91390951D04CF3200C8FA33 /* DeviceModel+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeviceModel+JSON.swift"; path = "Extensions/DeviceModel+JSON.swift"; sourceTree = "<group>"; };
+		E91390971D05242000C8FA33 /* InteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionDelegate.swift; sourceTree = "<group>"; };
+		E950D9A21D027443003DD7EE /* DeviceInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInteraction.swift; sourceTree = "<group>"; };
+		E950D9A61D02759D003DD7EE /* WemoStateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WemoStateResponse.swift; sourceTree = "<group>"; };
 		E9B70DAF1D0129F700E3BAEE /* WeMoInteraction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeMoInteraction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B70DB21D0129F700E3BAEE /* WeMoInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeMoInteraction.h; sourceTree = "<group>"; };
 		E9B70DB41D0129F700E3BAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9B70DB91D0129F700E3BAEE /* WeMoInteractionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMoInteractionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B70DBE1D0129F700E3BAEE /* WeMoInteractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMoInteractionTests.swift; sourceTree = "<group>"; };
 		E9B70DC01D0129F700E3BAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9B70DC91D012A9100E3BAEE /* WeMoMulticastHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeMoMulticastHandler.swift; sourceTree = "<group>"; };
+		E9B70DCC1D012AA000E3BAEE /* WeMoDiscoveryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeMoDiscoveryDelegate.swift; sourceTree = "<group>"; };
+		E9B70DD01D012BAE00E3BAEE /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E913907C1D03CDBA00C8FA33 /* Security.framework in Frameworks */,
+				AB1717129AA155C0D9C88C8B /* Pods_WeMoInteraction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +76,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B70DBA1D0129F700E3BAEE /* WeMoInteraction.framework in Frameworks */,
+				1D013F059DB37D0B0DFB74F5 /* Pods_WeMoInteractionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3609275BE45EC8D9250FDB91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B6EE8FDF4730FCEC677BA0A /* Pods-WeMoInteraction.debug.xcconfig */,
+				275EC5EF0C48923752244D1C /* Pods-WeMoInteraction.release.xcconfig */,
+				870B5D592E92E02D0FAA5215 /* Pods-WeMoInteractionTests.debug.xcconfig */,
+				233EAFF787704B7B47D20B89 /* Pods-WeMoInteractionTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A7CB4B645213E42401BB93D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E913907B1D03CDBA00C8FA33 /* Security.framework */,
+				26B105AD4959B299A5248764 /* Pods_WeMoInteraction.framework */,
+				4CA7BBE2F0854552CAE165B5 /* Pods_WeMoInteractionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E91390921D04CDCC00C8FA33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E91390951D04CF3200C8FA33 /* DeviceModel+JSON.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E950D9A41D02759D003DD7EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E950D9A61D02759D003DD7EE /* WemoStateResponse.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		E9B70DA51D0129F700E3BAEE = {
 			isa = PBXGroup;
 			children = (
 				E9B70DB11D0129F700E3BAEE /* WeMoInteraction */,
 				E9B70DBD1D0129F700E3BAEE /* WeMoInteractionTests */,
 				E9B70DB01D0129F700E3BAEE /* Products */,
+				3609275BE45EC8D9250FDB91 /* Pods */,
+				A7CB4B645213E42401BB93D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +143,12 @@
 		E9B70DB11D0129F700E3BAEE /* WeMoInteraction */ = {
 			isa = PBXGroup;
 			children = (
+				E91390921D04CDCC00C8FA33 /* Extensions */,
+				E950D9A41D02759D003DD7EE /* Classes */,
+				E950D9A21D027443003DD7EE /* DeviceInteraction.swift */,
+				E9B70DD21D012BF000E3BAEE /* Data Models */,
+				E9B70DCB1D012AA000E3BAEE /* Protocols */,
+				E9B70DC91D012A9100E3BAEE /* WeMoMulticastHandler.swift */,
 				E9B70DB21D0129F700E3BAEE /* WeMoInteraction.h */,
 				E9B70DB41D0129F700E3BAEE /* Info.plist */,
 			);
@@ -84,6 +162,27 @@
 				E9B70DC01D0129F700E3BAEE /* Info.plist */,
 			);
 			path = WeMoInteractionTests;
+			sourceTree = "<group>";
+		};
+		E9B70DCB1D012AA000E3BAEE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E9B70DD01D012BAE00E3BAEE /* Interaction.swift */,
+				E9B70DCC1D012AA000E3BAEE /* WeMoDiscoveryDelegate.swift */,
+				E91390971D05242000C8FA33 /* InteractionDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E9B70DD21D012BF000E3BAEE /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				E913908E1D049B6000C8FA33 /* DeviceStates.swift */,
+				E913908A1D049AFD00C8FA33 /* Device.swift */,
+				E913908B1D049AFD00C8FA33 /* ModelBase.swift */,
+			);
+			name = "Data Models";
+			path = "Date Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9B70DC31D0129F700E3BAEE /* Build configuration list for PBXNativeTarget "WeMoInteraction" */;
 			buildPhases = (
+				7F7DA3E074AFAA1FC899DE1B /* 📦 Check Pods Manifest.lock */,
 				E9B70DAA1D0129F700E3BAEE /* Sources */,
 				E9B70DAB1D0129F700E3BAEE /* Frameworks */,
 				E9B70DAC1D0129F700E3BAEE /* Headers */,
 				E9B70DAD1D0129F700E3BAEE /* Resources */,
+				946D990A1EBB252A778522DD /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9B70DC61D0129F700E3BAEE /* Build configuration list for PBXNativeTarget "WeMoInteractionTests" */;
 			buildPhases = (
+				F2855F69C5567B74AECB760E /* 📦 Check Pods Manifest.lock */,
 				E9B70DB51D0129F700E3BAEE /* Sources */,
 				E9B70DB61D0129F700E3BAEE /* Frameworks */,
 				E9B70DB71D0129F700E3BAEE /* Resources */,
+				BEF6F3A1AC55A1B0DE9B718B /* 📦 Embed Pods Frameworks */,
+				D025501BC0D65BB5C446C155 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,11 +293,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F7DA3E074AFAA1FC899DE1B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		946D990A1EBB252A778522DD /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeMoInteraction/Pods-WeMoInteraction-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEF6F3A1AC55A1B0DE9B718B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeMoInteractionTests/Pods-WeMoInteractionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D025501BC0D65BB5C446C155 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeMoInteractionTests/Pods-WeMoInteractionTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2855F69C5567B74AECB760E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9B70DAA1D0129F700E3BAEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B70DD11D012BAE00E3BAEE /* Interaction.swift in Sources */,
+				E91390961D04CF3200C8FA33 /* DeviceModel+JSON.swift in Sources */,
+				E913908F1D049B6000C8FA33 /* DeviceStates.swift in Sources */,
+				E950D9A31D027443003DD7EE /* DeviceInteraction.swift in Sources */,
+				E9B70DCA1D012A9100E3BAEE /* WeMoMulticastHandler.swift in Sources */,
+				E913908C1D049AFD00C8FA33 /* Device.swift in Sources */,
+				E913908D1D049AFD00C8FA33 /* ModelBase.swift in Sources */,
+				E91390981D05242000C8FA33 /* InteractionDelegate.swift in Sources */,
+				E950D9A91D02759D003DD7EE /* WemoStateResponse.swift in Sources */,
+				E9B70DCD1D012AA000E3BAEE /* WeMoDiscoveryDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +501,9 @@
 		};
 		E9B70DC41D0129F700E3BAEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B6EE8FDF4730FCEC677BA0A /* Pods-WeMoInteraction.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +514,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoInteraction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E9B70DC51D0129F700E3BAEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 275EC5EF0C48923752244D1C /* Pods-WeMoInteraction.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -341,6 +538,7 @@
 		};
 		E9B70DC71D0129F700E3BAEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 870B5D592E92E02D0FAA5215 /* Pods-WeMoInteractionTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WeMoInteractionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -351,6 +549,7 @@
 		};
 		E9B70DC81D0129F700E3BAEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 233EAFF787704B7B47D20B89 /* Pods-WeMoInteractionTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WeMoInteractionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -378,6 +577,7 @@
 				E9B70DC51D0129F700E3BAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9B70DC61D0129F700E3BAEE /* Build configuration list for PBXNativeTarget "WeMoInteractionTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +586,7 @@
 				E9B70DC81D0129F700E3BAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

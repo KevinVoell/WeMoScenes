@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E91390831D03D15200C8FA33 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E91390801D03D07600C8FA33 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E91390861D03D61E00C8FA33 /* jsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390851D03D61E00C8FA33 /* jsonSerializer.swift */; };
+		E91390911D049B9300C8FA33 /* ModelBaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390901D049B9300C8FA33 /* ModelBaseExtensions.swift */; };
+		E950D9701D0270C5003DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D96F1D0270C5003DD7EE /* AppDelegate.swift */; };
+		E950D9721D0270C5003DD7EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9711D0270C5003DD7EE /* ViewController.swift */; };
+		E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E950D9731D0270C5003DD7EE /* Main.storyboard */; };
+		E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */; };
+		E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E950D9791D0270C5003DD7EE /* Assets.xcassets */; };
+		E950D97D1D0270C5003DD7EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */; };
+		E950D9881D0270C5003DD7EE /* WeMoScenesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9871D0270C5003DD7EE /* WeMoScenesTests.swift */; };
+		E950D9931D0270C5003DD7EE /* WeMoScenesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9921D0270C5003DD7EE /* WeMoScenesUITests.swift */; };
+		E950D9AC1D02FBC4003DD7EE /* WeMoInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E950D9A01D027222003DD7EE /* WeMoInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E950D9B21D02FF57003DD7EE /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9B11D02FF57003DD7EE /* PageContentViewController.swift */; };
+		E950D9B61D030A38003DD7EE /* SceneEditorTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */; };
+		E950D9B81D035D4D003DD7EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E950D9B71D035D4D003DD7EE /* GoogleService-Info.plist */; };
+		EE3178FA16A460F99DAFD5DD /* Pods_WeMoScenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E950D9841D0270C5003DD7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E950D9641D0270C5003DD7EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E950D96B1D0270C5003DD7EE;
+			remoteInfo = WeMoScenes;
+		};
+		E950D98F1D0270C5003DD7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E950D9641D0270C5003DD7EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E950D96B1D0270C5003DD7EE;
+			remoteInfo = WeMoScenes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E950D9AD1D02FBC4003DD7EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E91390831D03D15200C8FA33 /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				E950D9AC1D02FBC4003DD7EE /* WeMoInteraction.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1E9DCB892CE533852D54A370 /* Pods-WeMoScenes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoScenes.release.xcconfig"; path = "../Pods/Target Support Files/Pods-WeMoScenes/Pods-WeMoScenes.release.xcconfig"; sourceTree = "<group>"; };
+		B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeMoScenes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC6A0C1C73915866BEB3185 /* Pods-WeMoScenes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoScenes.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-WeMoScenes/Pods-WeMoScenes.debug.xcconfig"; sourceTree = "<group>"; };
+		E91390791D03CDA600C8FA33 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E91390801D03D07600C8FA33 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WeMoInteraction-hkkxiraqbcuerlffkloxdqxqttzu/Build/Products/Debug-iphonesimulator/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
+		E91390851D03D61E00C8FA33 /* jsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonSerializer.swift; sourceTree = "<group>"; };
+		E91390901D049B9300C8FA33 /* ModelBaseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelBaseExtensions.swift; sourceTree = "<group>"; };
+		E950D96C1D0270C5003DD7EE /* WeMoScenes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMoScenes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E950D96F1D0270C5003DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E950D9711D0270C5003DD7EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E950D9741D0270C5003DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeMoScenes.xcdatamodel; sourceTree = "<group>"; };
+		E950D9791D0270C5003DD7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E950D97C1D0270C5003DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E950D97E1D0270C5003DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E950D9831D0270C5003DD7EE /* WeMoScenesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMoScenesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E950D9871D0270C5003DD7EE /* WeMoScenesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMoScenesTests.swift; sourceTree = "<group>"; };
+		E950D9891D0270C5003DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E950D98E1D0270C5003DD7EE /* WeMoScenesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMoScenesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E950D9921D0270C5003DD7EE /* WeMoScenesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMoScenesUITests.swift; sourceTree = "<group>"; };
+		E950D9941D0270C5003DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E950D9A01D027222003DD7EE /* WeMoInteraction.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeMoInteraction.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WeMoInteraction-hkkxiraqbcuerlffkloxdqxqttzu/Build/Products/Debug-iphonesimulator/WeMoInteraction.framework"; sourceTree = "<group>"; };
+		E950D9B11D02FF57003DD7EE /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageContentViewController.swift; path = "View Controllers/PageContentViewController.swift"; sourceTree = "<group>"; };
+		E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneEditorTableTableViewController.swift; path = "View Controllers/SceneEditorTableTableViewController.swift"; sourceTree = "<group>"; };
+		E950D9B71D035D4D003DD7EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E950D9691D0270C5003DD7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE3178FA16A460F99DAFD5DD /* Pods_WeMoScenes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E950D9801D0270C5003DD7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E950D98B1D0270C5003DD7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17D1F0FACC97A7BCC6D9F90C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E91390801D03D07600C8FA33 /* CocoaAsyncSocket.framework */,
+				E91390791D03CDA600C8FA33 /* Security.framework */,
+				B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD902B9EBEFC5AB6A3AE55F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEC6A0C1C73915866BEB3185 /* Pods-WeMoScenes.debug.xcconfig */,
+				1E9DCB892CE533852D54A370 /* Pods-WeMoScenes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E91390871D049A4E00C8FA33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E91390901D049B9300C8FA33 /* ModelBaseExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E950D9631D0270C5003DD7EE = {
+			isa = PBXGroup;
+			children = (
+				E950D9A01D027222003DD7EE /* WeMoInteraction.framework */,
+				E950D96E1D0270C5003DD7EE /* WeMoScenes */,
+				E950D9861D0270C5003DD7EE /* WeMoScenesTests */,
+				E950D9911D0270C5003DD7EE /* WeMoScenesUITests */,
+				E950D96D1D0270C5003DD7EE /* Products */,
+				CD902B9EBEFC5AB6A3AE55F5 /* Pods */,
+				17D1F0FACC97A7BCC6D9F90C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E950D96D1D0270C5003DD7EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E950D96C1D0270C5003DD7EE /* WeMoScenes.app */,
+				E950D9831D0270C5003DD7EE /* WeMoScenesTests.xctest */,
+				E950D98E1D0270C5003DD7EE /* WeMoScenesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E950D96E1D0270C5003DD7EE /* WeMoScenes */ = {
+			isa = PBXGroup;
+			children = (
+				E91390871D049A4E00C8FA33 /* Extensions */,
+				E950D9AE1D02FED0003DD7EE /* View Controllers */,
+				E950D96F1D0270C5003DD7EE /* AppDelegate.swift */,
+				E950D9711D0270C5003DD7EE /* ViewController.swift */,
+				E950D9731D0270C5003DD7EE /* Main.storyboard */,
+				E950D9791D0270C5003DD7EE /* Assets.xcassets */,
+				E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */,
+				E950D97E1D0270C5003DD7EE /* Info.plist */,
+				E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */,
+				E950D9B71D035D4D003DD7EE /* GoogleService-Info.plist */,
+				E91390851D03D61E00C8FA33 /* jsonSerializer.swift */,
+			);
+			path = WeMoScenes;
+			sourceTree = "<group>";
+		};
+		E950D9861D0270C5003DD7EE /* WeMoScenesTests */ = {
+			isa = PBXGroup;
+			children = (
+				E950D9871D0270C5003DD7EE /* WeMoScenesTests.swift */,
+				E950D9891D0270C5003DD7EE /* Info.plist */,
+			);
+			path = WeMoScenesTests;
+			sourceTree = "<group>";
+		};
+		E950D9911D0270C5003DD7EE /* WeMoScenesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E950D9921D0270C5003DD7EE /* WeMoScenesUITests.swift */,
+				E950D9941D0270C5003DD7EE /* Info.plist */,
+			);
+			path = WeMoScenesUITests;
+			sourceTree = "<group>";
+		};
+		E950D9AE1D02FED0003DD7EE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E950D9B11D02FF57003DD7EE /* PageContentViewController.swift */,
+				E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E950D96B1D0270C5003DD7EE /* WeMoScenes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E950D9971D0270C5003DD7EE /* Build configuration list for PBXNativeTarget "WeMoScenes" */;
+			buildPhases = (
+				815340C447554CDAA5DB18C5 /* 📦 Check Pods Manifest.lock */,
+				E950D9681D0270C5003DD7EE /* Sources */,
+				E950D9691D0270C5003DD7EE /* Frameworks */,
+				E950D96A1D0270C5003DD7EE /* Resources */,
+				E950D9AD1D02FBC4003DD7EE /* Embed Frameworks */,
+				422A4D6471650D2042ED7C20 /* 📦 Embed Pods Frameworks */,
+				9E55A8BD7A4965274D5BEA8D /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeMoScenes;
+			productName = WeMoScenes;
+			productReference = E950D96C1D0270C5003DD7EE /* WeMoScenes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E950D9821D0270C5003DD7EE /* WeMoScenesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E950D99A1D0270C5003DD7EE /* Build configuration list for PBXNativeTarget "WeMoScenesTests" */;
+			buildPhases = (
+				E950D97F1D0270C5003DD7EE /* Sources */,
+				E950D9801D0270C5003DD7EE /* Frameworks */,
+				E950D9811D0270C5003DD7EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E950D9851D0270C5003DD7EE /* PBXTargetDependency */,
+			);
+			name = WeMoScenesTests;
+			productName = WeMoScenesTests;
+			productReference = E950D9831D0270C5003DD7EE /* WeMoScenesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E950D98D1D0270C5003DD7EE /* WeMoScenesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E950D99D1D0270C5003DD7EE /* Build configuration list for PBXNativeTarget "WeMoScenesUITests" */;
+			buildPhases = (
+				E950D98A1D0270C5003DD7EE /* Sources */,
+				E950D98B1D0270C5003DD7EE /* Frameworks */,
+				E950D98C1D0270C5003DD7EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E950D9901D0270C5003DD7EE /* PBXTargetDependency */,
+			);
+			name = WeMoScenesUITests;
+			productName = WeMoScenesUITests;
+			productReference = E950D98E1D0270C5003DD7EE /* WeMoScenesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E950D9641D0270C5003DD7EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Kevin Voell";
+				TargetAttributes = {
+					E950D96B1D0270C5003DD7EE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E950D9821D0270C5003DD7EE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E950D96B1D0270C5003DD7EE;
+					};
+					E950D98D1D0270C5003DD7EE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E950D96B1D0270C5003DD7EE;
+					};
+				};
+			};
+			buildConfigurationList = E950D9671D0270C5003DD7EE /* Build configuration list for PBXProject "WeMoScenes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E950D9631D0270C5003DD7EE;
+			productRefGroup = E950D96D1D0270C5003DD7EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E950D96B1D0270C5003DD7EE /* WeMoScenes */,
+				E950D9821D0270C5003DD7EE /* WeMoScenesTests */,
+				E950D98D1D0270C5003DD7EE /* WeMoScenesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E950D96A1D0270C5003DD7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E950D97D1D0270C5003DD7EE /* LaunchScreen.storyboard in Resources */,
+				E950D9B81D035D4D003DD7EE /* GoogleService-Info.plist in Resources */,
+				E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */,
+				E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E950D9811D0270C5003DD7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E950D98C1D0270C5003DD7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		422A4D6471650D2042ED7C20 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-WeMoScenes/Pods-WeMoScenes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		815340C447554CDAA5DB18C5 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E55A8BD7A4965274D5BEA8D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-WeMoScenes/Pods-WeMoScenes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E950D9681D0270C5003DD7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E91390911D049B9300C8FA33 /* ModelBaseExtensions.swift in Sources */,
+				E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */,
+				E950D9B61D030A38003DD7EE /* SceneEditorTableTableViewController.swift in Sources */,
+				E950D9B21D02FF57003DD7EE /* PageContentViewController.swift in Sources */,
+				E950D9721D0270C5003DD7EE /* ViewController.swift in Sources */,
+				E950D9701D0270C5003DD7EE /* AppDelegate.swift in Sources */,
+				E91390861D03D61E00C8FA33 /* jsonSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E950D97F1D0270C5003DD7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E950D9881D0270C5003DD7EE /* WeMoScenesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E950D98A1D0270C5003DD7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E950D9931D0270C5003DD7EE /* WeMoScenesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E950D9851D0270C5003DD7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E950D96B1D0270C5003DD7EE /* WeMoScenes */;
+			targetProxy = E950D9841D0270C5003DD7EE /* PBXContainerItemProxy */;
+		};
+		E950D9901D0270C5003DD7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E950D96B1D0270C5003DD7EE /* WeMoScenes */;
+			targetProxy = E950D98F1D0270C5003DD7EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E950D9731D0270C5003DD7EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E950D9741D0270C5003DD7EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E950D97C1D0270C5003DD7EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E950D9951D0270C5003DD7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E950D9961D0270C5003DD7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E950D9981D0270C5003DD7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC6A0C1C73915866BEB3185 /* Pods-WeMoScenes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
+				);
+				INFOPLIST_FILE = WeMoScenes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoScenes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E950D9991D0270C5003DD7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E9DCB892CE533852D54A370 /* Pods-WeMoScenes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
+				);
+				INFOPLIST_FILE = WeMoScenes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoScenes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E950D99B1D0270C5003DD7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WeMoScenesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoScenesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeMoScenes.app/WeMoScenes";
+			};
+			name = Debug;
+		};
+		E950D99C1D0270C5003DD7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WeMoScenesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoScenesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeMoScenes.app/WeMoScenes";
+			};
+			name = Release;
+		};
+		E950D99E1D0270C5003DD7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WeMoScenesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoScenesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WeMoScenes;
+			};
+			name = Debug;
+		};
+		E950D99F1D0270C5003DD7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WeMoScenesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusheax.WeMoScenesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WeMoScenes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E950D9671D0270C5003DD7EE /* Build configuration list for PBXProject "WeMoScenes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E950D9951D0270C5003DD7EE /* Debug */,
+				E950D9961D0270C5003DD7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E950D9971D0270C5003DD7EE /* Build configuration list for PBXNativeTarget "WeMoScenes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E950D9981D0270C5003DD7EE /* Debug */,
+				E950D9991D0270C5003DD7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E950D99A1D0270C5003DD7EE /* Build configuration list for PBXNativeTarget "WeMoScenesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E950D99B1D0270C5003DD7EE /* Debug */,
+				E950D99C1D0270C5003DD7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E950D99D1D0270C5003DD7EE /* Build configuration list for PBXNativeTarget "WeMoScenesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E950D99E1D0270C5003DD7EE /* Debug */,
+				E950D99F1D0270C5003DD7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */,
+			);
+			currentVersion = E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */;
+			path = WeMoScenes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E950D9641D0270C5003DD7EE /* Project object */;
+}
