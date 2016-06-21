@@ -40,6 +40,10 @@ public class DeviceDataModel : NSObject, ModelBase, NSXMLParserDelegate {
    */
   public var port: String?
   
+  public var UDN: String?
+  
+  public var aborted: Bool = false
+  
   private var inRoot: Bool = false
   
   private var inDevice: Bool = false
@@ -55,6 +59,7 @@ public class DeviceDataModel : NSObject, ModelBase, NSXMLParserDelegate {
     
     let parser = NSXMLParser(data: fromXML.dataUsingEncoding(NSUTF8StringEncoding)!)
     parser.delegate = self
+    parser.shouldProcessNamespaces = true
     parser.parse()
   }
   
@@ -64,6 +69,12 @@ public class DeviceDataModel : NSObject, ModelBase, NSXMLParserDelegate {
                               qualifiedName qName: String?,
                                             attributes attributeDict: [String : String])
   {
+    if (!(namespaceURI?.hasPrefix("urn:Belkin:"))!){
+      self.aborted = true
+      parser.abortParsing()
+      return;
+    }
+    
     switch elementName {
     case "root":
       self.inRoot = true
@@ -106,6 +117,8 @@ public class DeviceDataModel : NSObject, ModelBase, NSXMLParserDelegate {
       //  self.status = string == "0" ? WemoState.Off : WemoState.On
       case "firmwareVersion":
         self.firmwareVersion = string
+      case "UDN":
+        self.UDN = string
       default: break
         
       }

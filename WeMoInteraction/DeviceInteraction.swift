@@ -8,6 +8,7 @@
 
 import Foundation
 import SystemConfiguration
+import Firebase
 
 public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   
@@ -23,16 +24,27 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   
   public var devices: Array<DeviceDataModel> = Array<DeviceDataModel>()
   
+  private var databaseReference: FIRDatabaseReference!
+  
+  public init() {
+    // Configure FireBase
+    FIRApp.configure()
+    
+    FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
+      self.databaseReference = FIRDatabase.database().reference()
+    }
+    
+    
+  }
+  
+  deinit {
+    discovery = nil
+  }
+  
   /**
    * Delegate
    */
   public var delegate: InteractionDelegate?
-  
-  private static let _instance = DeviceInteraction()
-  
-  public static func instance() -> Interaction {
-    return _instance
-  }
   
   /*
    * Gets the stat of the device
@@ -75,7 +87,7 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   
   public func getDevice(baseAddress: String) {
     let myUrl = NSURL(string: baseAddress)
-    
+
     let request = NSMutableURLRequest(URL:myUrl!)
     request.HTTPMethod = "GET"
     
@@ -86,10 +98,16 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
         let xml = String(data: data!, encoding: NSUTF8StringEncoding)
         let device = DeviceDataModel.init(fromXML: xml!)
         
-        self.devices.append(device)
-        
-        if (self.delegate != nil) {
-          self.delegate?.newDeviceFound()
+        if (!device.aborted) {
+          print(device.friendlyName!)
+          
+          device.ipAddress = baseAddress.stringByReplacingOccurrencesOfString("/setup.xml", withString: "")
+          let currentUser = FIRAuth.auth()
+          
+          self.databaseReference.child("Devices")
+            .child((FIRAuth.auth()?.currentUser!.uid)!)
+            .child(device.UDN!)
+            .setValue(device.toJson())
         }
       }
     }
@@ -112,10 +130,6 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
     discovery!.start()
     
     return devices
-  }
-  
-  private func getDeviceName(baseAddress: String) -> String {
-    return "";
   }
   
   /**

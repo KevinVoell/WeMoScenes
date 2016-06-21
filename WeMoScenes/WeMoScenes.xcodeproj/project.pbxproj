@@ -8,20 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		E91390831D03D15200C8FA33 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E91390801D03D07600C8FA33 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91390861D03D61E00C8FA33 /* jsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390851D03D61E00C8FA33 /* jsonSerializer.swift */; };
-		E91390911D049B9300C8FA33 /* ModelBaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390901D049B9300C8FA33 /* ModelBaseExtensions.swift */; };
 		E950D9701D0270C5003DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D96F1D0270C5003DD7EE /* AppDelegate.swift */; };
-		E950D9721D0270C5003DD7EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9711D0270C5003DD7EE /* ViewController.swift */; };
 		E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E950D9731D0270C5003DD7EE /* Main.storyboard */; };
 		E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */; };
 		E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E950D9791D0270C5003DD7EE /* Assets.xcassets */; };
 		E950D97D1D0270C5003DD7EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */; };
 		E950D9881D0270C5003DD7EE /* WeMoScenesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9871D0270C5003DD7EE /* WeMoScenesTests.swift */; };
 		E950D9931D0270C5003DD7EE /* WeMoScenesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9921D0270C5003DD7EE /* WeMoScenesUITests.swift */; };
-		E950D9AC1D02FBC4003DD7EE /* WeMoInteraction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E950D9A01D027222003DD7EE /* WeMoInteraction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E950D9B21D02FF57003DD7EE /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9B11D02FF57003DD7EE /* PageContentViewController.swift */; };
 		E950D9B61D030A38003DD7EE /* SceneEditorTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */; };
-		E950D9B81D035D4D003DD7EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E950D9B71D035D4D003DD7EE /* GoogleService-Info.plist */; };
+		E96B4A3E1D0C2DB800F41579 /* jsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A3D1D0C2DB800F41579 /* jsonSerializer.swift */; };
+		E96B4A401D0C2DD500F41579 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A3F1D0C2DD500F41579 /* DeviceModel.swift */; };
+		E96B4A421D0C2DE200F41579 /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A411D0C2DE200F41579 /* ModelBase.swift */; };
+		E96B4A441D0C2DF800F41579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A431D0C2DF800F41579 /* ViewController.swift */; };
+		E96B4A471D0C2E4300F41579 /* DeviceInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A461D0C2E4300F41579 /* DeviceInteraction.swift */; };
+		E96B4A491D0C2E5D00F41579 /* WemoStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A481D0C2E5D00F41579 /* WemoStateResponse.swift */; };
+		E96B4A4C1D0C2E6B00F41579 /* DeviceModel+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A4A1D0C2E6B00F41579 /* DeviceModel+JSON.swift */; };
+		E96B4A4D1D0C2E6B00F41579 /* ModelBase+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A4B1D0C2E6B00F41579 /* ModelBase+JSON.swift */; };
+		E96B4A521D0C2E8900F41579 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A4F1D0C2E8900F41579 /* Interaction.swift */; };
+		E96B4A531D0C2E8900F41579 /* WeMoDiscoveryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A501D0C2E8900F41579 /* WeMoDiscoveryDelegate.swift */; };
+		E96B4A541D0C2E8900F41579 /* InteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A511D0C2E8900F41579 /* InteractionDelegate.swift */; };
+		E96B4A571D0C2E9900F41579 /* WeMoMulticastHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A551D0C2E9900F41579 /* WeMoMulticastHandler.swift */; };
+		E96B4A591D0C32E200F41579 /* SceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A581D0C32E200F41579 /* SceneModel.swift */; };
+		E96B4A5B1D0C60A600F41579 /* SceneDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A5A1D0C60A600F41579 /* SceneDeviceModel.swift */; };
+		E96B4A5D1D0D011900F41579 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E96B4A5C1D0D011900F41579 /* GoogleService-Info.plist */; };
+		E96B4A601D0D062800F41579 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A5F1D0D062800F41579 /* ApiManager.swift */; };
+		E96B4A621D0D075300F41579 /* ManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A611D0D075300F41579 /* ManagerDelegate.swift */; };
+		E96B4A651D0E502D00F41579 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A641D0E502D00F41579 /* SwitchTableViewCell.swift */; };
+		E96B4A671D0FAAB500F41579 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A661D0FAAB500F41579 /* PageViewController.swift */; };
+		E96B4A691D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */; };
 		EE3178FA16A460F99DAFD5DD /* Pods_WeMoScenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +65,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E91390831D03D15200C8FA33 /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				E950D9AC1D02FBC4003DD7EE /* WeMoInteraction.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,11 +77,9 @@
 		CEC6A0C1C73915866BEB3185 /* Pods-WeMoScenes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeMoScenes.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-WeMoScenes/Pods-WeMoScenes.debug.xcconfig"; sourceTree = "<group>"; };
 		E91390791D03CDA600C8FA33 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E91390801D03D07600C8FA33 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WeMoInteraction-hkkxiraqbcuerlffkloxdqxqttzu/Build/Products/Debug-iphonesimulator/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
-		E91390851D03D61E00C8FA33 /* jsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonSerializer.swift; sourceTree = "<group>"; };
-		E91390901D049B9300C8FA33 /* ModelBaseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelBaseExtensions.swift; sourceTree = "<group>"; };
+		E91391981D0644F200C8FA33 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = gitignore; path = ../gitignore; sourceTree = "<group>"; };
 		E950D96C1D0270C5003DD7EE /* WeMoScenes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMoScenes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E950D96F1D0270C5003DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E950D9711D0270C5003DD7EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E950D9741D0270C5003DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeMoScenes.xcdatamodel; sourceTree = "<group>"; };
 		E950D9791D0270C5003DD7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,10 +91,29 @@
 		E950D98E1D0270C5003DD7EE /* WeMoScenesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeMoScenesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E950D9921D0270C5003DD7EE /* WeMoScenesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeMoScenesUITests.swift; sourceTree = "<group>"; };
 		E950D9941D0270C5003DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E950D9A01D027222003DD7EE /* WeMoInteraction.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeMoInteraction.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WeMoInteraction-hkkxiraqbcuerlffkloxdqxqttzu/Build/Products/Debug-iphonesimulator/WeMoInteraction.framework"; sourceTree = "<group>"; };
 		E950D9B11D02FF57003DD7EE /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageContentViewController.swift; path = "View Controllers/PageContentViewController.swift"; sourceTree = "<group>"; };
 		E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneEditorTableTableViewController.swift; path = "View Controllers/SceneEditorTableTableViewController.swift"; sourceTree = "<group>"; };
-		E950D9B71D035D4D003DD7EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E96B4A3D1D0C2DB800F41579 /* jsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = jsonSerializer.swift; path = Serialization/jsonSerializer.swift; sourceTree = "<group>"; };
+		E96B4A3F1D0C2DD500F41579 /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceModel.swift; path = Models/DeviceModel.swift; sourceTree = "<group>"; };
+		E96B4A411D0C2DE200F41579 /* ModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelBase.swift; path = Models/ModelBase.swift; sourceTree = "<group>"; };
+		E96B4A431D0C2DF800F41579 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "View Controllers/ViewController.swift"; sourceTree = "<group>"; };
+		E96B4A461D0C2E4300F41579 /* DeviceInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInteraction.swift; sourceTree = "<group>"; };
+		E96B4A481D0C2E5D00F41579 /* WemoStateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WemoStateResponse.swift; sourceTree = "<group>"; };
+		E96B4A4A1D0C2E6B00F41579 /* DeviceModel+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceModel+JSON.swift"; sourceTree = "<group>"; };
+		E96B4A4B1D0C2E6B00F41579 /* ModelBase+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModelBase+JSON.swift"; sourceTree = "<group>"; };
+		E96B4A4F1D0C2E8900F41579 /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
+		E96B4A501D0C2E8900F41579 /* WeMoDiscoveryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeMoDiscoveryDelegate.swift; sourceTree = "<group>"; };
+		E96B4A511D0C2E8900F41579 /* InteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionDelegate.swift; sourceTree = "<group>"; };
+		E96B4A551D0C2E9900F41579 /* WeMoMulticastHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeMoMulticastHandler.swift; sourceTree = "<group>"; };
+		E96B4A561D0C2E9900F41579 /* WeMoInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeMoInteraction.h; sourceTree = "<group>"; };
+		E96B4A581D0C32E200F41579 /* SceneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneModel.swift; path = Models/SceneModel.swift; sourceTree = "<group>"; };
+		E96B4A5A1D0C60A600F41579 /* SceneDeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDeviceModel.swift; sourceTree = "<group>"; };
+		E96B4A5C1D0D011900F41579 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E96B4A5F1D0D062800F41579 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiManager.swift; path = Models/Managers/ApiManager.swift; sourceTree = "<group>"; };
+		E96B4A611D0D075300F41579 /* ManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagerDelegate.swift; path = Models/Managers/ManagerDelegate.swift; sourceTree = "<group>"; };
+		E96B4A641D0E502D00F41579 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchTableViewCell.swift; path = Cells/SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		E96B4A661D0FAAB500F41579 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = "View Controllers/PageViewController.swift"; sourceTree = "<group>"; };
+		E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchTableViewCellDelegate.swift; path = Protocols/SwitchTableViewCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +164,8 @@
 		E91390871D049A4E00C8FA33 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E91390901D049B9300C8FA33 /* ModelBaseExtensions.swift */,
+				E96B4A4A1D0C2E6B00F41579 /* DeviceModel+JSON.swift */,
+				E96B4A4B1D0C2E6B00F41579 /* ModelBase+JSON.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -141,7 +173,7 @@
 		E950D9631D0270C5003DD7EE = {
 			isa = PBXGroup;
 			children = (
-				E950D9A01D027222003DD7EE /* WeMoInteraction.framework */,
+				E91391981D0644F200C8FA33 /* gitignore */,
 				E950D96E1D0270C5003DD7EE /* WeMoScenes */,
 				E950D9861D0270C5003DD7EE /* WeMoScenesTests */,
 				E950D9911D0270C5003DD7EE /* WeMoScenesUITests */,
@@ -164,17 +196,20 @@
 		E950D96E1D0270C5003DD7EE /* WeMoScenes */ = {
 			isa = PBXGroup;
 			children = (
+				E96B4A631D0E4FEE00F41579 /* Cells */,
+				E96B4A4E1D0C2E7700F41579 /* Protocols */,
+				E96B4A451D0C2E3400F41579 /* Interaction */,
+				E96B4A3C1D0C2D8400F41579 /* Serialization */,
+				E96B4A351D0C2D2C00F41579 /* Models */,
+				E96B4A341D0C2D0B00F41579 /* Views */,
 				E91390871D049A4E00C8FA33 /* Extensions */,
-				E950D9AE1D02FED0003DD7EE /* View Controllers */,
+				E950D9AE1D02FED0003DD7EE /* Controllers */,
 				E950D96F1D0270C5003DD7EE /* AppDelegate.swift */,
-				E950D9711D0270C5003DD7EE /* ViewController.swift */,
-				E950D9731D0270C5003DD7EE /* Main.storyboard */,
 				E950D9791D0270C5003DD7EE /* Assets.xcassets */,
 				E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */,
 				E950D97E1D0270C5003DD7EE /* Info.plist */,
 				E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */,
-				E950D9B71D035D4D003DD7EE /* GoogleService-Info.plist */,
-				E91390851D03D61E00C8FA33 /* jsonSerializer.swift */,
+				E96B4A5C1D0D011900F41579 /* GoogleService-Info.plist */,
 			);
 			path = WeMoScenes;
 			sourceTree = "<group>";
@@ -197,13 +232,82 @@
 			path = WeMoScenesUITests;
 			sourceTree = "<group>";
 		};
-		E950D9AE1D02FED0003DD7EE /* View Controllers */ = {
+		E950D9AE1D02FED0003DD7EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E96B4A431D0C2DF800F41579 /* ViewController.swift */,
 				E950D9B11D02FF57003DD7EE /* PageContentViewController.swift */,
 				E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */,
+				E96B4A661D0FAAB500F41579 /* PageViewController.swift */,
 			);
-			name = "View Controllers";
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E96B4A341D0C2D0B00F41579 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E950D9731D0270C5003DD7EE /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E96B4A351D0C2D2C00F41579 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E96B4A5E1D0D05EB00F41579 /* Managers */,
+				E96B4A481D0C2E5D00F41579 /* WemoStateResponse.swift */,
+				E96B4A411D0C2DE200F41579 /* ModelBase.swift */,
+				E96B4A3F1D0C2DD500F41579 /* DeviceModel.swift */,
+				E96B4A581D0C32E200F41579 /* SceneModel.swift */,
+				E96B4A5A1D0C60A600F41579 /* SceneDeviceModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E96B4A3C1D0C2D8400F41579 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				E96B4A3D1D0C2DB800F41579 /* jsonSerializer.swift */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		E96B4A451D0C2E3400F41579 /* Interaction */ = {
+			isa = PBXGroup;
+			children = (
+				E96B4A551D0C2E9900F41579 /* WeMoMulticastHandler.swift */,
+				E96B4A561D0C2E9900F41579 /* WeMoInteraction.h */,
+				E96B4A461D0C2E4300F41579 /* DeviceInteraction.swift */,
+			);
+			name = Interaction;
+			sourceTree = "<group>";
+		};
+		E96B4A4E1D0C2E7700F41579 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E96B4A4F1D0C2E8900F41579 /* Interaction.swift */,
+				E96B4A501D0C2E8900F41579 /* WeMoDiscoveryDelegate.swift */,
+				E96B4A511D0C2E8900F41579 /* InteractionDelegate.swift */,
+				E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		E96B4A5E1D0D05EB00F41579 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E96B4A5F1D0D062800F41579 /* ApiManager.swift */,
+				E96B4A611D0D075300F41579 /* ManagerDelegate.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		E96B4A631D0E4FEE00F41579 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E96B4A641D0E502D00F41579 /* SwitchTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +382,7 @@
 				TargetAttributes = {
 					E950D96B1D0270C5003DD7EE = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = G333CAMH6R;
 					};
 					E950D9821D0270C5003DD7EE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -315,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E950D97D1D0270C5003DD7EE /* LaunchScreen.storyboard in Resources */,
-				E950D9B81D035D4D003DD7EE /* GoogleService-Info.plist in Resources */,
+				E96B4A5D1D0D011900F41579 /* GoogleService-Info.plist in Resources */,
 				E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */,
 				E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */,
 			);
@@ -390,13 +495,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E91390911D049B9300C8FA33 /* ModelBaseExtensions.swift in Sources */,
+				E96B4A4D1D0C2E6B00F41579 /* ModelBase+JSON.swift in Sources */,
+				E96B4A571D0C2E9900F41579 /* WeMoMulticastHandler.swift in Sources */,
+				E96B4A651D0E502D00F41579 /* SwitchTableViewCell.swift in Sources */,
 				E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */,
+				E96B4A691D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift in Sources */,
 				E950D9B61D030A38003DD7EE /* SceneEditorTableTableViewController.swift in Sources */,
+				E96B4A531D0C2E8900F41579 /* WeMoDiscoveryDelegate.swift in Sources */,
 				E950D9B21D02FF57003DD7EE /* PageContentViewController.swift in Sources */,
-				E950D9721D0270C5003DD7EE /* ViewController.swift in Sources */,
+				E96B4A5B1D0C60A600F41579 /* SceneDeviceModel.swift in Sources */,
+				E96B4A4C1D0C2E6B00F41579 /* DeviceModel+JSON.swift in Sources */,
+				E96B4A441D0C2DF800F41579 /* ViewController.swift in Sources */,
+				E96B4A591D0C32E200F41579 /* SceneModel.swift in Sources */,
+				E96B4A521D0C2E8900F41579 /* Interaction.swift in Sources */,
+				E96B4A491D0C2E5D00F41579 /* WemoStateResponse.swift in Sources */,
+				E96B4A671D0FAAB500F41579 /* PageViewController.swift in Sources */,
+				E96B4A401D0C2DD500F41579 /* DeviceModel.swift in Sources */,
+				E96B4A3E1D0C2DB800F41579 /* jsonSerializer.swift in Sources */,
+				E96B4A621D0D075300F41579 /* ManagerDelegate.swift in Sources */,
+				E96B4A601D0D062800F41579 /* ApiManager.swift in Sources */,
+				E96B4A471D0C2E4300F41579 /* DeviceInteraction.swift in Sources */,
+				E96B4A541D0C2E8900F41579 /* InteractionDelegate.swift in Sources */,
+				E96B4A421D0C2DE200F41579 /* ModelBase.swift in Sources */,
 				E950D9701D0270C5003DD7EE /* AppDelegate.swift in Sources */,
-				E91390861D03D61E00C8FA33 /* jsonSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +662,7 @@
 			baseConfigurationReference = CEC6A0C1C73915866BEB3185 /* Pods-WeMoScenes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
@@ -564,6 +686,7 @@
 			baseConfigurationReference = 1E9DCB892CE533852D54A370 /* Pods-WeMoScenes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",

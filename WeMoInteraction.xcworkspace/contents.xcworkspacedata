@@ -5,9 +5,6 @@
       location = "group:WeMoScenes/WeMoScenes.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:WeMoInteraction.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

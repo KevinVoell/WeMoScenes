@@ -15,6 +15,9 @@
 		E913908F1D049B6000C8FA33 /* DeviceStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913908E1D049B6000C8FA33 /* DeviceStates.swift */; };
 		E91390961D04CF3200C8FA33 /* DeviceModel+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390951D04CF3200C8FA33 /* DeviceModel+JSON.swift */; };
 		E91390981D05242000C8FA33 /* InteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91390971D05242000C8FA33 /* InteractionDelegate.swift */; };
+		E93314671D0A3B37000078ED /* ModelBase+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93314661D0A3B37000078ED /* ModelBase+JSON.swift */; };
+		E93314691D0A3B51000078ED /* jsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93314681D0A3B51000078ED /* jsonSerializer.swift */; };
+		E933146D1D0A3F23000078ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E933146C1D0A3F23000078ED /* GoogleService-Info.plist */; };
 		E950D9A31D027443003DD7EE /* DeviceInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9A21D027443003DD7EE /* DeviceInteraction.swift */; };
 		E950D9A91D02759D003DD7EE /* WemoStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9A61D02759D003DD7EE /* WemoStateResponse.swift */; };
 		E9B70DB31D0129F700E3BAEE /* WeMoInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B70DB21D0129F700E3BAEE /* WeMoInteraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +51,9 @@
 		E913908E1D049B6000C8FA33 /* DeviceStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceStates.swift; path = "WeMoInteraction/Data Models/DeviceStates.swift"; sourceTree = SOURCE_ROOT; };
 		E91390951D04CF3200C8FA33 /* DeviceModel+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeviceModel+JSON.swift"; path = "Extensions/DeviceModel+JSON.swift"; sourceTree = "<group>"; };
 		E91390971D05242000C8FA33 /* InteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionDelegate.swift; sourceTree = "<group>"; };
+		E93314661D0A3B37000078ED /* ModelBase+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModelBase+JSON.swift"; path = "Extensions/ModelBase+JSON.swift"; sourceTree = "<group>"; };
+		E93314681D0A3B51000078ED /* jsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonSerializer.swift; sourceTree = "<group>"; };
+		E933146C1D0A3F23000078ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E950D9A21D027443003DD7EE /* DeviceInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInteraction.swift; sourceTree = "<group>"; };
 		E950D9A61D02759D003DD7EE /* WemoStateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WemoStateResponse.swift; sourceTree = "<group>"; };
 		E9B70DAF1D0129F700E3BAEE /* WeMoInteraction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeMoInteraction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E91390951D04CF3200C8FA33 /* DeviceModel+JSON.swift */,
+				E93314661D0A3B37000078ED /* ModelBase+JSON.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 		E9B70DB11D0129F700E3BAEE /* WeMoInteraction */ = {
 			isa = PBXGroup;
 			children = (
+				E933146C1D0A3F23000078ED /* GoogleService-Info.plist */,
+				E93314681D0A3B51000078ED /* jsonSerializer.swift */,
 				E91390921D04CDCC00C8FA33 /* Extensions */,
 				E950D9A41D02759D003DD7EE /* Classes */,
 				E950D9A21D027443003DD7EE /* DeviceInteraction.swift */,
@@ -281,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E933146D1D0A3F23000078ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +396,8 @@
 				E91390981D05242000C8FA33 /* InteractionDelegate.swift in Sources */,
 				E950D9A91D02759D003DD7EE /* WemoStateResponse.swift in Sources */,
 				E9B70DCD1D012AA000E3BAEE /* WeMoDiscoveryDelegate.swift in Sources */,
+				E93314671D0A3B37000078ED /* ModelBase+JSON.swift in Sources */,
+				E93314691D0A3B51000078ED /* jsonSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

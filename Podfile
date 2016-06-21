@@ -6,20 +6,23 @@ project 'WeMoInteraction.xcodeproj'
 
 #source 'https://github.com/peheje/JsonSerializerSwift'
 
-target 'WeMoInteraction' do
+#target 'WeMoInteraction' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+#  use_frameworks!
 
   # Pods for WeMoInteraction
-  pod 'CocoaAsyncSocket', '~> 7.4'
+#  pod 'CocoaAsyncSocket', '~> 7.4'
+#  pod 'Firebase'
+#  pod 'Firebase/Database'
+#  pod 'Firebase/Auth'
 
-  target 'WeMoInteractionTests' do
-    inherit! :search_paths
+#  target 'WeMoInteractionTests' do
+#    inherit! :search_paths
     # Pods for testing
-  end
+#  end
 
-  project 'WeMoInteraction.xcodeproj'
-end
+#  project 'WeMoInteraction.xcodeproj'
+#end
 
 target 'WeMoScenes' do
   use_frameworks!
@@ -28,6 +31,7 @@ target 'WeMoScenes' do
   pod 'Firebase'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   
   project 'WeMoScenes/WeMoScenes.xcodeproj'
 end

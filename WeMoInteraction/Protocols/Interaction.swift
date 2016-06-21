@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Interaction {
   
-  static func instance() -> Interaction
+  //static func instance() -> Interaction
   
   func getState(device: DeviceDataModel, completion: (deviceState?) -> ())
   
