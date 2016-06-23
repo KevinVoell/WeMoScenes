@@ -6,38 +6,21 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="crn-55-SbP">
             <objects>
-                <navigationController id="mSw-sJ-Qmj" customClass="ViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="mSw-sJ-Qmj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zdC-sE-4u4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZVv-Y9-BqO" kind="relationship" relationship="rootViewController" id="0HO-lq-s2P"/>
+                        <segue destination="yb9-6J-F0p" kind="relationship" relationship="rootViewController" id="i7S-Rp-jfn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ObG-ZG-JlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-540" y="115"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="Cpk-Ep-4Ye">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZVv-Y9-BqO" customClass="PageViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9Oo-4J-cpf">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="NWU-bW-4sd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UdD-an-7eF">
-                            <connections>
-                                <segue destination="O9K-Yk-bQa" kind="presentation" identifier="newSceneSegue" id="5Rj-2y-sll"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10V-Wh-vce" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="223" y="115"/>
         </scene>
         <!--Edit-->
         <scene sceneID="gUP-4y-vVK">
@@ -51,13 +34,13 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Scene Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-tK-oj0">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Scene Name (i.e. Exterior Lights)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-tK-oj0">
                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="584" id="EHk-Zx-dnS"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,75 +149,81 @@
             </objects>
             <point key="canvasLocation" x="937" y="-567"/>
         </scene>
-        <!--Page Content View Controller-->
-        <scene sceneID="Y4a-M4-6Zx">
+        <!--wemo Scenes-->
+        <scene sceneID="UWb-Cu-b2M">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="eLl-oi-xyw" customClass="PageContentViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pCL-Bw-Cqf"/>
-                        <viewControllerLayoutGuide type="bottom" id="dOW-B5-IXy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gqe-H3-mAa">
+                <tableViewController id="yb9-6J-F0p" customClass="SceneTableViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WMy-dH-T3g">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwX-gG-NZG">
-                                <rect key="frame" x="139" y="83" width="323" height="130"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="0ba-Fk-dVB"/>
-                                    <constraint firstAttribute="width" constant="323" id="BT9-Cp-sgi"/>
-                                </constraints>
-                                <state key="normal" title="On">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sceneCell" id="jxI-FE-4Hh" customClass="SceneTableViewCell" customModule="WeMoScenes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jxI-FE-4Hh" id="DLt-Cs-pHg">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GB9-31-zOA">
+                                            <rect key="frame" x="471" y="8" width="121" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="121" id="KAy-gx-B7m"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="On"/>
+                                                <segment title="Off"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="Test:" destination="jxI-FE-4Hh" eventType="valueChanged" id="nmm-MM-LmI"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tn7-iQ-gg5">
+                                            <rect key="frame" x="8" y="11" width="455" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GB9-31-zOA" firstAttribute="leading" secondItem="Tn7-iQ-gg5" secondAttribute="trailing" constant="8" id="5QP-BN-N5q"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GB9-31-zOA" secondAttribute="trailing" id="OSR-Xb-gTq"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Tn7-iQ-gg5" secondAttribute="leading" id="UgF-Sh-OI3"/>
+                                        <constraint firstItem="Tn7-iQ-gg5" firstAttribute="top" secondItem="DLt-Cs-pHg" secondAttribute="topMargin" constant="3" id="aQW-bK-xK7"/>
+                                        <constraint firstItem="GB9-31-zOA" firstAttribute="top" secondItem="DLt-Cs-pHg" secondAttribute="topMargin" id="eKF-EJ-kxf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Tn7-iQ-gg5" secondAttribute="bottom" constant="4" id="eMk-M3-Wc9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <action selector="onButtonTapped:" destination="eLl-oi-xyw" eventType="touchUpInside" id="USN-6f-rCx"/>
+                                    <outlet property="onOffButton" destination="GB9-31-zOA" id="3QS-II-7Kd"/>
+                                    <outlet property="title" destination="Tn7-iQ-gg5" id="KwN-so-M77"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yW-CO-tHF">
-                                <rect key="frame" x="139" y="319" width="323" height="130"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="e06-tG-yWA"/>
-                                </constraints>
-                                <state key="normal" title="Off">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="offButtonTapped:" destination="eLl-oi-xyw" eventType="touchUpInside" id="wd8-Bg-sFL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neD-X0-e9X">
-                                <rect key="frame" x="546" y="554" width="22" height="22"/>
-                                <connections>
-                                    <segue destination="O9K-Yk-bQa" kind="show" identifier="editSceneSegue" id="jqU-YL-hkT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dOW-B5-IXy" firstAttribute="top" secondItem="neD-X0-e9X" secondAttribute="bottom" constant="24" id="5Tp-eM-tPL"/>
-                            <constraint firstItem="bwX-gG-NZG" firstAttribute="centerX" secondItem="gqe-H3-mAa" secondAttribute="centerX" id="Efb-s5-3M0"/>
-                            <constraint firstItem="dOW-B5-IXy" firstAttribute="top" secondItem="7yW-CO-tHF" secondAttribute="bottom" constant="151" id="Z2v-9d-abd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="neD-X0-e9X" secondAttribute="trailing" constant="12" id="dNX-4K-5iQ"/>
-                            <constraint firstItem="bwX-gG-NZG" firstAttribute="leading" secondItem="7yW-CO-tHF" secondAttribute="leading" id="hS2-hY-Pv6"/>
-                            <constraint firstItem="bwX-gG-NZG" firstAttribute="trailing" secondItem="7yW-CO-tHF" secondAttribute="trailing" id="l2r-3Z-Lcz"/>
-                            <constraint firstItem="bwX-gG-NZG" firstAttribute="top" secondItem="pCL-Bw-Cqf" secondAttribute="bottom" constant="63" id="mWT-tv-m9m"/>
-                        </constraints>
-                    </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yb9-6J-F0p" id="E9O-sE-AAh"/>
+                            <outlet property="delegate" destination="yb9-6J-F0p" id="Xo9-PL-lnS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="wemo Scenes" id="6j3-Jn-iIv">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="2PV-SW-Pnt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDN-Ku-Iqk">
+                            <connections>
+                                <segue destination="O9K-Yk-bQa" kind="presentation" identifier="newSceneSegue" id="ehu-b1-XWt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="editButton" destination="neD-X0-e9X" id="3g0-6E-uX7"/>
-                        <outlet property="offButton" destination="7yW-CO-tHF" id="7gf-JH-XOl"/>
-                        <outlet property="onButton" destination="bwX-gG-NZG" id="pbK-FQ-Ax1"/>
+                        <segue destination="O9K-Yk-bQa" kind="presentation" identifier="editSceneSegue" id="w4F-C7-o24"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fKv-74-lh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxg-im-IbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="115"/>
+            <point key="canvasLocation" x="153" y="115"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jqU-YL-hkT"/>
+        <segue reference="w4F-C7-o24"/>
     </inferredMetricsTieBreakers>
 </document>

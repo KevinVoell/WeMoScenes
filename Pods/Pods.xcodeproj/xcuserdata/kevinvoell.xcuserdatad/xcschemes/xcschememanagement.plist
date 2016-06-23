@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>CocoaAsyncSocket.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>FlatButtons.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>JSONHelper.xcscheme</key>
 		<dict>
@@ -29,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>QBFlatButton.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,6 +52,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>062725163F9C2C06FF870CACC872B7DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0D5A52D48A997D0FB7DCF521F7D597F9</key>
 		<dict>
 			<key>primary</key>
@@ -47,12 +67,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>22E1769E36426E558451AC733D745ED0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>24B57B735BAC9BF1C3B8A6E6EC27DCB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>24FB1BB0AB4B68388EB65B09AB3B9A67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>342ED8B688030AFB9C9CBE5DD1131F6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47AB8E2DB1AC987F71328E0778564784</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4BBEC7D582188D0EEE1A5B00D826D6B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B83150E2354BE3F8368FEBD6412636D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +123,16 @@
 			<true/>
 		</dict>
 		<key>BA0C217D5F6D637230B70326B60996C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6525C97058F91E41D280E11DA4BC518</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD18DF122049D3780E4DC3D1D58BE86D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

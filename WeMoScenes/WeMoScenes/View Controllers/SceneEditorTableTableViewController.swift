@@ -44,7 +44,7 @@ class SceneEditorTableTableViewController:
       self.navigationController!.toolbarHidden = true
       self.navigationItem.title = "New Scene"
       
-      self.currentModel = SceneModel(withName: "New Scene")
+      self.currentModel = SceneModel(withName: "")
     } else {
       self.navigationItem.title = "Edit Scene"
     }

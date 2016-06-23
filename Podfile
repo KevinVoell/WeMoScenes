@@ -32,6 +32,7 @@ target 'WeMoScenes' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+  pod 'ChameleonFramework/Swift'
   
   project 'WeMoScenes/WeMoScenes.xcodeproj'
 end
