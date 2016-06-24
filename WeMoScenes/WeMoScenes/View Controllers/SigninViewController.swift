@@ -11,6 +11,10 @@ import FirebaseAuth
 
 class SigninViewController: UIViewController {
 
+  /**
+    Called when the user taps the signin anonymously button.
+    - parameter sender: The button that was tapped
+  */
   @IBAction func signinAnonymouslyTapped(sender: AnyObject) {
     FIRAuth.auth()!.signInAnonymouslyWithCompletion(nil)
   }
