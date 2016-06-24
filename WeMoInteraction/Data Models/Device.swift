@@ -11,37 +11,40 @@ import Foundation
 public class DeviceDataModel : NSObject, ModelBase, NSXMLParserDelegate {
   
   /**
-   * The name of the device.
-   */
+    The name of the device.
+  */
   public var friendlyName: String?
   
   /**
-   * The type of device.
-   */
+    The type of device.
+  */
   public var deviceType: String?
   
   /**
-   * The serial number of the device.
-   */
+    The serial number of the device.
+  */
   public var serialNumber: String?
   
   /**
-   * The firmware version of the device.
-   */
+    The firmware version of the device.
+  */
   public var firmwareVersion: String?
   
   /**
-   * The local IP address of the device
+    The local IP address of the device.
    */
   public var ipAddress: String?
   
   /**
-   * The port the device is listening on.
+    The port the device is listening on.
    */
   public var port: String?
   
   public var UDN: String?
   
+  /**
+    Indicates if the parsing was aborted.
+  */
   public var aborted: Bool = false
   
   private var inRoot: Bool = false
@@ -53,7 +56,12 @@ public class DeviceDataModel : NSObject, ModelBase, NSXMLParserDelegate {
   public override init() {
     
   }
-  
+
+  /**
+    init: Initializes an instance of the Device class from Xml.
+    
+    - parameter fromXML String: The Xml to initialize this class from.
+  */
   public convenience init(fromXML: String) {
     self.init()
     
