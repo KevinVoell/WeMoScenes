@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   internal static var user: FIRUser?
   
-  internal var deviceInteration: DeviceInteraction?
+  internal static var deviceInteration: DeviceInteraction?
   
   /**
    * manager: Data manager for the device table.
@@ -33,30 +33,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Configure FireBase
     FIRApp.configure()
     
-    FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
-      
-      if (user?.uid != nil) {
-        AppDelegate.user = user
-        
-        // TODO: Shutdown network connection.
-        AppDelegate.manager = ApiManager<DeviceModel>()
-        AppDelegate.manager!.startWatching()
-    
-        let manager = ApiManager<SceneModel>()
-        manager.exists("All Switches", callback: { (exists) in
-          // TODO: Create default scene.
-          if (!exists) {
-            let scene = SceneModel(withName: "All Switches")
-          
-            manager.save(scene)
-            
-          }
-        })
-        
-        self.deviceInteration  = DeviceInteraction()
-        self.deviceInteration!.findDevices()
-      }
-    }
+//    FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
+//      
+//      if (user?.uid != nil) {
+//        user?.getTokenWithCompletion({ (token, error) in
+//          print(token!)
+//        })
+//        AppDelegate.user = user
+//        
+//        // TODO: Shutdown network connection.
+//        AppDelegate.manager = ApiManager<DeviceModel>()
+//        AppDelegate.manager!.startWatching()
+//    
+//        let manager = ApiManager<SceneModel>()
+//        manager.exists("All Switches", callback: { (exists) in
+//          // TODO: Create default scene.
+//          if (!exists) {
+//            let scene = SceneModel(withName: "All Switches")
+//          
+//            manager.save(scene)
+//            
+//          }
+//        })
+//        
+//        self.deviceInteration  = DeviceInteraction()
+//        self.deviceInteration!.findDevices()
+//      }
+//    }
     
     let pageControl = UIPageControl.appearance()
     pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
@@ -88,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     
-    self.deviceInteration = nil
+    AppDelegate.deviceInteration = nil
     
     self.saveContext()
   }

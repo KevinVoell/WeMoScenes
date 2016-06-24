@@ -7,6 +7,80 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
+        <scene sceneID="gPK-1R-jhA">
+            <objects>
+                <navigationController id="1Qc-SK-M1f" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C5b-fa-TYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GMN-7q-7ON" kind="relationship" relationship="rootViewController" id="tjL-c7-Yp1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbI-0B-Nn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543" y="-866"/>
+        </scene>
+        <!--Signin View Controller-->
+        <scene sceneID="DIC-5E-1BO">
+            <objects>
+                <viewController storyboardIdentifier="signinViewController" id="GMN-7q-7ON" customClass="SigninViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ipf-9K-JQo"/>
+                        <viewControllerLayoutGuide type="bottom" id="qp7-q7-0xq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l6i-0H-EfM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uta-Wz-Nic">
+                                <rect key="frame" x="148" y="183" width="305" height="169"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izi-Fl-xwZ">
+                                        <rect key="frame" x="8" y="14" width="289" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-3h-flv">
+                                        <rect key="frame" x="8" y="52" width="289" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GL9-1r-eoV">
+                                        <rect key="frame" x="173" y="90" width="124" height="30"/>
+                                        <state key="normal" title="Signin"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-zK-GxZ">
+                                        <rect key="frame" x="8" y="131" width="289" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Signin Anonymously">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signinAnonymouslyTapped:" destination="GMN-7q-7ON" eventType="touchUpInside" id="vF7-2c-98J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uta-Wz-Nic" firstAttribute="centerX" secondItem="l6i-0H-EfM" secondAttribute="centerX" id="3X5-5t-PfX"/>
+                            <constraint firstItem="uta-Wz-Nic" firstAttribute="centerY" secondItem="l6i-0H-EfM" secondAttribute="centerY" constant="-32.5" id="Byw-oF-2h4"/>
+                            <constraint firstItem="uta-Wz-Nic" firstAttribute="leading" secondItem="l6i-0H-EfM" secondAttribute="leading" constant="148" id="XhH-Fx-Buc"/>
+                            <constraint firstItem="uta-Wz-Nic" firstAttribute="top" secondItem="ipf-9K-JQo" secondAttribute="bottom" constant="119" id="hi7-Gv-Sxq"/>
+                            <constraint firstItem="uta-Wz-Nic" firstAttribute="centerX" secondItem="l6i-0H-EfM" secondAttribute="centerX" id="qZL-b2-MlZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mZ2-Gt-BPM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JES-Eo-knb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="-866"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="crn-55-SbP">
             <objects>
                 <navigationController id="mSw-sJ-Qmj" sceneMemberID="viewController">
@@ -207,7 +281,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="wemo Scenes" id="6j3-Jn-iIv">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="2PV-SW-Pnt"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="2PV-SW-Pnt">
+                            <connections>
+                                <segue destination="Afq-jd-gul" kind="presentation" identifier="settingsSegue" id="gu2-wN-Bzv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDN-Ku-Iqk">
                             <connections>
                                 <segue destination="O9K-Yk-bQa" kind="presentation" identifier="newSceneSegue" id="ehu-b1-XWt"/>
@@ -216,11 +294,63 @@
                     </navigationItem>
                     <connections>
                         <segue destination="O9K-Yk-bQa" kind="presentation" identifier="editSceneSegue" id="w4F-C7-o24"/>
+                        <segue destination="1Qc-SK-M1f" kind="presentation" identifier="signinSegue" id="yDr-9M-ga0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxg-im-IbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="115"/>
+            <point key="canvasLocation" x="245" y="115"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="pDs-Ea-iyR">
+            <objects>
+                <viewController id="EnB-ZL-eT3" customClass="SettingsViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Il-DK-gRN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xG8-Ul-HVQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OZz-jt-vp3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rE9-kQ-0Yy">
+                                <rect key="frame" x="134" y="285" width="333" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Signout"/>
+                                <connections>
+                                    <action selector="signoutTapped:" destination="EnB-ZL-eT3" eventType="touchUpInside" id="bLJ-jm-pgc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xrH-hF-xKS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DFF-5e-3LR">
+                            <connections>
+                                <action selector="cancelTapped:" destination="EnB-ZL-eT3" id="V4U-zM-m6T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GjH-VF-7k4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="942"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wyA-yl-2fs">
+            <objects>
+                <navigationController id="Afq-jd-gul" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7pk-0a-Vz5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EnB-ZL-eT3" kind="relationship" relationship="rootViewController" id="auz-di-eAv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zun-d5-iBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="942"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

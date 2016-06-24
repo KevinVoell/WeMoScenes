@@ -13,20 +13,24 @@ class SceneTableViewController: UITableViewController,
                                 ManagerDelegate {
   
   private lazy var databaseManager = ApiManager<SceneModel>()
+  
+  private var shownViewController : UINavigationController?
 
   override func viewDidLoad() {
     self.tableView.delegate = self
     self.tableView.dataSource = self
     
-    FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
-      if user != nil {
-        // Setup the data manager
-        self.databaseManager.delegate = self;
-        self.databaseManager.startWatching()
-        
-        AppDelegate.manager?.delegate = self
-      }
-    })
+    self.handleAuthChange()
+    
+//    FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
+//      if user != nil {
+//        // Setup the data manager
+//        self.databaseManager.delegate = self;
+//        self.databaseManager.startWatching()
+//        
+//        AppDelegate.manager?.delegate = self
+//      }
+//    })
   }
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -120,10 +124,72 @@ class SceneTableViewController: UITableViewController,
             destination.sceneManager = self.databaseManager
         }
       }
+    } else if segue.identifier! == "signinSegue" {
+      self.shownViewController = segue.destinationViewController as? UINavigationController
+    } else if segue.identifier! == "settingsSegue" {
+      self.settingsVC = segue.destinationViewController as? UINavigationController
     }
   }
   
+  var settingsVC: UINavigationController?
+  
   func itemAdded() {
     self.tableView!.reloadData()
+  }
+  
+  func handleAuthChange() {
+    FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
+      if user == nil {
+        // TODO: Shutdown services
+        AppDelegate.manager = nil
+        if self.settingsVC != nil {
+          self.settingsVC!.dismissViewControllerAnimated(true, completion: { 
+            self.performSegueWithIdentifier("signinSegue", sender: nil)
+          })
+        } else {
+          self.performSegueWithIdentifier("signinSegue", sender: nil)
+        }
+      } else {
+        if (AppDelegate.manager != nil) {
+          return
+        }
+        if self.shownViewController != nil {
+          self.shownViewController?.dismissViewControllerAnimated(true, completion: { self.setup(user!) })
+        } else {
+          self.setup(user!)
+        }
+        
+
+      }
+    })
+  }
+  
+  func setup(user: FIRUser) {
+    //self.performSegueWithIdentifier("mainSegue", sender: nil)
+    
+    AppDelegate.user = user
+    
+    // TODO: Shutdown network connection.
+    AppDelegate.manager = ApiManager<DeviceModel>()
+    AppDelegate.manager!.startWatching()
+    
+    self.databaseManager.delegate = self;
+    self.databaseManager.startWatching()
+    
+    AppDelegate.manager?.delegate = self
+    
+    let manager = ApiManager<SceneModel>()
+    manager.exists("All Switches", callback: { (exists) in
+      // TODO: Create default scene.
+      if (!exists) {
+        let scene = SceneModel(withName: "All Switches")
+        
+        manager.save(scene)
+        
+      }
+    })
+    
+    AppDelegate.deviceInteration  = DeviceInteraction()
+    AppDelegate.deviceInteration!.findDevices()
   }
 }
