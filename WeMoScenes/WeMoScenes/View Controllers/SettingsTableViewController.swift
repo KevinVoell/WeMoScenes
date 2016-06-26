@@ -9,10 +9,23 @@
 import UIKit
 import FirebaseAuth
 
-class SettingsViewController: UIViewController {
+class SettingsTableViewController: UITableViewController {
+  @IBOutlet weak var usernameTextField: UILabel!
 
-  @IBAction func cancelTapped(sender: AnyObject) {
+  @IBAction func cancelButtonTapped(sender: AnyObject) {
     self.dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let user = FIRAuth.auth()?.currentUser {
+      if user.anonymous {
+        usernameTextField.text = "Anonymous"
+      } else {
+        usernameTextField.text = user.email
+      }
+    }
   }
   
   @IBAction func signoutTapped(sender: AnyObject) {

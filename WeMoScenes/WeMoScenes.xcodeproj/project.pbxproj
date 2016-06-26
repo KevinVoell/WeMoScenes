@@ -20,8 +20,10 @@
 		E951654A1D1A124000D68504 /* SceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95165491D1A124000D68504 /* SceneTableViewCell.swift */; };
 		E951654C1D1AB3A400D68504 /* Array+Find.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951654B1D1AB3A400D68504 /* Array+Find.swift */; };
 		E951654E1D1CD6CD00D68504 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951654D1D1CD6CD00D68504 /* MainViewController.swift */; };
-		E95165501D1CD87000D68504 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951654F1D1CD87000D68504 /* SigninViewController.swift */; };
-		E95165521D1CDD0900D68504 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95165511D1CDD0900D68504 /* SettingsViewController.swift */; };
+		E95165501D1CD87000D68504 /* SigninTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951654F1D1CD87000D68504 /* SigninTableViewController.swift */; };
+		E95165521D1CDD0900D68504 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95165511D1CDD0900D68504 /* SettingsTableViewController.swift */; };
+		E95165541D1E065600D68504 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95165531D1E065600D68504 /* CreateAccountTableViewController.swift */; };
+		E95165561D1F726C00D68504 /* ForgotPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95165551D1F726C00D68504 /* ForgotPasswordTableViewController.swift */; };
 		E96B4A3E1D0C2DB800F41579 /* jsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A3D1D0C2DB800F41579 /* jsonSerializer.swift */; };
 		E96B4A401D0C2DD500F41579 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A3F1D0C2DD500F41579 /* DeviceModel.swift */; };
 		E96B4A421D0C2DE200F41579 /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A411D0C2DE200F41579 /* ModelBase.swift */; };
@@ -97,8 +99,10 @@
 		E95165491D1A124000D68504 /* SceneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneTableViewCell.swift; path = Cells/SceneTableViewCell.swift; sourceTree = "<group>"; };
 		E951654B1D1AB3A400D68504 /* Array+Find.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Find.swift"; path = "Extensions/Array+Find.swift"; sourceTree = "<group>"; };
 		E951654D1D1CD6CD00D68504 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "View Controllers/MainViewController.swift"; sourceTree = "<group>"; };
-		E951654F1D1CD87000D68504 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = "View Controllers/SigninViewController.swift"; sourceTree = "<group>"; };
-		E95165511D1CDD0900D68504 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "View Controllers/SettingsViewController.swift"; sourceTree = "<group>"; };
+		E951654F1D1CD87000D68504 /* SigninTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninTableViewController.swift; path = "View Controllers/SigninTableViewController.swift"; sourceTree = "<group>"; };
+		E95165511D1CDD0900D68504 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "View Controllers/SettingsTableViewController.swift"; sourceTree = "<group>"; };
+		E95165531D1E065600D68504 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountTableViewController.swift; path = "View Controllers/CreateAccountTableViewController.swift"; sourceTree = "<group>"; };
+		E95165551D1F726C00D68504 /* ForgotPasswordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordTableViewController.swift; path = "View Controllers/ForgotPasswordTableViewController.swift"; sourceTree = "<group>"; };
 		E96B4A3D1D0C2DB800F41579 /* jsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = jsonSerializer.swift; path = Serialization/jsonSerializer.swift; sourceTree = "<group>"; };
 		E96B4A3F1D0C2DD500F41579 /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceModel.swift; path = Models/DeviceModel.swift; sourceTree = "<group>"; };
 		E96B4A411D0C2DE200F41579 /* ModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelBase.swift; path = Models/ModelBase.swift; sourceTree = "<group>"; };
@@ -239,8 +243,10 @@
 				E950D9B51D030A38003DD7EE /* SceneEditorTableTableViewController.swift */,
 				E95165471D1A0A8900D68504 /* SceneTableViewController.swift */,
 				E951654D1D1CD6CD00D68504 /* MainViewController.swift */,
-				E951654F1D1CD87000D68504 /* SigninViewController.swift */,
-				E95165511D1CDD0900D68504 /* SettingsViewController.swift */,
+				E951654F1D1CD87000D68504 /* SigninTableViewController.swift */,
+				E95165511D1CDD0900D68504 /* SettingsTableViewController.swift */,
+				E95165531D1E065600D68504 /* CreateAccountTableViewController.swift */,
+				E95165551D1F726C00D68504 /* ForgotPasswordTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				E96B4A651D0E502D00F41579 /* SwitchTableViewCell.swift in Sources */,
 				E951654A1D1A124000D68504 /* SceneTableViewCell.swift in Sources */,
 				E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */,
+				E95165561D1F726C00D68504 /* ForgotPasswordTableViewController.swift in Sources */,
 				E96B4A691D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift in Sources */,
 				E950D9B61D030A38003DD7EE /* SceneEditorTableTableViewController.swift in Sources */,
 				E95165481D1A0A8900D68504 /* SceneTableViewController.swift in Sources */,
@@ -511,17 +518,18 @@
 				E96B4A591D0C32E200F41579 /* SceneModel.swift in Sources */,
 				E96B4A521D0C2E8900F41579 /* Interaction.swift in Sources */,
 				E96B4A491D0C2E5D00F41579 /* WemoStateResponse.swift in Sources */,
-				E95165501D1CD87000D68504 /* SigninViewController.swift in Sources */,
+				E95165501D1CD87000D68504 /* SigninTableViewController.swift in Sources */,
 				E96B4A401D0C2DD500F41579 /* DeviceModel.swift in Sources */,
 				E96B4A3E1D0C2DB800F41579 /* jsonSerializer.swift in Sources */,
 				E96B4A621D0D075300F41579 /* ManagerDelegate.swift in Sources */,
 				E951654C1D1AB3A400D68504 /* Array+Find.swift in Sources */,
 				E96B4A601D0D062800F41579 /* ApiManager.swift in Sources */,
 				E96B4A471D0C2E4300F41579 /* DeviceInteraction.swift in Sources */,
+				E95165541D1E065600D68504 /* CreateAccountTableViewController.swift in Sources */,
 				E96B4A541D0C2E8900F41579 /* InteractionDelegate.swift in Sources */,
 				E96B4A421D0C2DE200F41579 /* ModelBase.swift in Sources */,
 				E950D9701D0270C5003DD7EE /* AppDelegate.swift in Sources */,
-				E95165521D1CDD0900D68504 /* SettingsViewController.swift in Sources */,
+				E95165521D1CDD0900D68504 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

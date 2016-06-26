@@ -111,26 +111,26 @@ class SceneTableViewController: UITableViewController,
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segue.identifier! {
-      case "newSceneSegue:
-        let destinationViewController = segue.destinationViewController as! UINavigationController
-        let destination = destinationViewController.viewControllers[0] as! SceneEditorTableTableViewController
-        destination.sceneManager = self.databaseManager
-      
-      case "editSceneSegue":
-        if let destinationViewController = segue.destinationViewController as? UINavigationController {
-          if let destination = destinationViewController.viewControllers[0] as? SceneEditorTableTableViewController {
-              destination.currentModel = sender as? SceneModel
-              destination.sceneManager = self.databaseManager
-          }
-        }      
+    case "newSceneSegue":
+      let destinationViewController = segue.destinationViewController as! UINavigationController
+      let destination = destinationViewController.viewControllers[0] as! SceneEditorTableTableViewController
+      destination.sceneManager = self.databaseManager
+    
+    case "editSceneSegue":
+      if let destinationViewController = segue.destinationViewController as? UINavigationController {
+        if let destination = destinationViewController.viewControllers[0] as? SceneEditorTableTableViewController {
+            destination.currentModel = sender as? SceneModel
+            destination.sceneManager = self.databaseManager
+        }
+      }      
         
-      case "signinSegue":
-        self.shownViewController = segue.destinationViewController as? UINavigationController
+    case "signinSegue":
+      self.shownViewController = segue.destinationViewController as? UINavigationController
         
-      case "settingsSegue:
-        self.settingsVC = segue.destinationViewController as? UINavigationController
+    case "settingsSegue":
+      self.settingsVC = segue.destinationViewController as? UINavigationController
         
-      default
+    default:
         break
     }
   }
@@ -150,7 +150,7 @@ class SceneTableViewController: UITableViewController,
       - auth: The current FIRAuth object
       - user: The current FIRUser object, or null if no user signed in
   */
-  func handleAuthChange(auth: FIRAuth, user : FIRUser) {
+  func handleAuthChange(auth: FIRAuth?, user : FIRUser?) {
     if user == nil {
       // TODO: Shutdown services
       AppDelegate.manager = nil
@@ -162,6 +162,17 @@ class SceneTableViewController: UITableViewController,
         self.performSegueWithIdentifier("signinSegue", sender: nil)
       }
     } else {
+      if !user!.emailVerified {
+        do {
+          try FIRAuth.auth()?.signOut()
+        } catch let signOutError as NSError {
+          print(signOutError)
+        }
+        
+        return
+      }
+      
+      
       if (AppDelegate.manager != nil) {
         return
       }

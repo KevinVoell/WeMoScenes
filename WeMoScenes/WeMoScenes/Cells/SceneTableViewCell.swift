@@ -27,11 +27,11 @@ internal class SceneTableViewCell: UITableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    (onOffButton.subviews[1] as UIView).backgroundColor = UIColor.greenColor()
-    (onOffButton.subviews[1] as UIView).tintColor = UIColor.blackColor()
+    //(onOffButton.subviews[1] as UIView).backgroundColor = UIColor.flatGreenColor()
+    //(onOffButton.subviews[1] as UIView).tintColor = UIColor.blackColor()
     
-    (onOffButton.subviews[0] as UIView).backgroundColor = UIColor.redColor()
-    (onOffButton.subviews[0] as UIView).tintColor = UIColor.blackColor()
+    //(onOffButton.subviews[0] as UIView).backgroundColor = UIColor.flatRedColor()
+    //(onOffButton.subviews[0] as UIView).tintColor = UIColor.blackColor()
     
 //    NSFontAttributeName:[UIFont fontWithName:@"Arial" size:16.0],
 //    NSForegroundColorAttributeName:[UIColor redColor],
