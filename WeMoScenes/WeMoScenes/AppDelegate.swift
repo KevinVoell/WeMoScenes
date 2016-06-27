@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   internal static var user: FIRUser?
   
-  internal static var deviceInteration: DeviceInteraction?
+  internal static var deviceInteration: DeviceInteraction = DeviceInteraction()
   
   /**
    * manager: Data manager for the device table.
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     
-    AppDelegate.deviceInteration = nil
+//    /AppDelegate.deviceInteration.
     
     self.saveContext()
   }

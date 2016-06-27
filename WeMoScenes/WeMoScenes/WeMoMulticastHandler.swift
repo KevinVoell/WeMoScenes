@@ -47,10 +47,10 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
         try ssdpSocket.joinMulticastGroup(ssdpAddres)
         try ssdpSocket.beginReceiving()
       }
-      catch
+      catch let unknownError
       {
         // Error
-        return
+        print(unknownError)
       }
     }
   }

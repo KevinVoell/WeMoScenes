@@ -162,7 +162,7 @@ class SceneTableViewController: UITableViewController,
         self.performSegueWithIdentifier("signinSegue", sender: nil)
       }
     } else {
-      if !user!.emailVerified {
+      if !user!.anonymous && !user!.emailVerified {
         do {
           try FIRAuth.auth()?.signOut()
         } catch let signOutError as NSError {
@@ -171,7 +171,6 @@ class SceneTableViewController: UITableViewController,
         
         return
       }
-      
       
       if (AppDelegate.manager != nil) {
         return
@@ -200,8 +199,8 @@ class SceneTableViewController: UITableViewController,
     
     // Start looking for devices on the local network
     // TODO: This can probably be made a singleton object
-    AppDelegate.deviceInteration  = DeviceInteraction()
-    AppDelegate.deviceInteration!.findDevices()
+    //AppDelegate.deviceInteration  = DeviceInteraction()
+    AppDelegate.deviceInteration.findDevices()
     
     // Start Scene watcher
     self.databaseManager.delegate = self;

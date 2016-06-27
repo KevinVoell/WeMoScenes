@@ -75,7 +75,7 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
     
           if error != nil {
             // Oops something happened
-    
+            print(error?.localizedDescription)
             return;
           }
           
