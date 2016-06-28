@@ -27,10 +27,14 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   private var databaseReference: FIRDatabaseReference!
   
   public init() {
-      self.databaseReference = FIRDatabase.database().reference()    
+    print("Called init on DeviceInteraction")
+  
+    self.databaseReference = FIRDatabase.database().reference()    
   }
   
   deinit {
+    print("Called deinit on DeviceInteraction")
+  
     discovery = nil
   }
   
