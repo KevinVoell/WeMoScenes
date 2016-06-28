@@ -34,7 +34,8 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   
   deinit {
     print("Called deinit on DeviceInteraction")
-  
+    
+    discovery.stop()
     discovery = nil
   }
   
