@@ -153,7 +153,8 @@ class SceneTableViewController: UITableViewController,
   func handleAuthChange(auth: FIRAuth?, user : FIRUser?) {
     if user == nil {
       // TODO: Shutdown services
-      AppDelegate.manager = nil
+      self.stop()
+      
       if self.settingsVC != nil {
         self.settingsVC!.dismissViewControllerAnimated(true, completion: { 
           self.performSegueWithIdentifier("signinSegue", sender: nil)
@@ -184,13 +185,17 @@ class SceneTableViewController: UITableViewController,
     }
   }
   
+  func stop() {
+    AppDelegate.manager!.stopWatching()
+    AppDelegate.manager = nil
+    
+    self.databaseManager.stopWatching()    
+  }
+  
   /** 
     Sets up and starts services when a user login.
   */
   func setup(user: FIRUser) {
-    // TODO: Probably don't need this since we can get the User from the FIRAuth object
-    AppDelegate.user = user
-    
     // Start the Device watcher on the AppDelegate
     // TODO: We might be able to make this a singleton class instead of having it live on the AppDelegate.
     AppDelegate.manager = ApiManager<DeviceModel>()

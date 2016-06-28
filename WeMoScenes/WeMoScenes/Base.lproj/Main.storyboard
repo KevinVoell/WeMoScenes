@@ -185,8 +185,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Signin" id="sjh-f9-PWv"/>
                     <connections>
+                        <outlet property="createAccountButton" destination="BZq-e5-5D9" id="Dll-iq-wt8"/>
                         <outlet property="emailTextField" destination="lG7-dS-OXd" id="XEX-jI-peR"/>
                         <outlet property="passwordTextField" destination="46b-sz-qdz" id="R9s-Kz-85P"/>
+                        <outlet property="signinButton" destination="TjS-bH-zu1" id="RjA-2A-ADq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FON-du-mtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -616,7 +618,7 @@
         <scene sceneID="jpv-iJ-Sku">
             <objects>
                 <tableViewController id="1Ih-YG-yn5" customClass="SettingsTableViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="k3g-L3-25C">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="k3g-L3-25C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -647,28 +649,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="Dqu-6T-xIN">
-                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dqu-6T-xIN" id="zbi-YK-9K6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="4PX-ib-6J0">
-                                        <rect key="frame" x="0.0" y="187" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4PX-ib-6J0" id="9no-kg-ws6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="Jhq-CQ-Jte">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="4oI-hl-8lz">
-                                        <rect key="frame" x="0.0" y="267" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="179" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4oI-hl-8lz" id="TNa-vy-wPp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -696,6 +682,61 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="h8c-pb-hIE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="UgJ-GI-IT0">
+                                        <rect key="frame" x="0.0" y="259" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UgJ-GI-IT0" id="DYD-wx-DAY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR0-OI-u1o">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="600" id="GeU-fq-L63"/>
+                                                        <constraint firstAttribute="height" constant="43.5" id="eej-18-cp8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Signin"/>
+                                                    <connections>
+                                                        <segue destination="EgG-Md-qSE" kind="show" id="i90-t5-EgX"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LR0-OI-u1o" firstAttribute="centerY" secondItem="DYD-wx-DAY" secondAttribute="centerY" id="b4P-08-24U"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="LR0-OI-u1o" secondAttribute="leading" constant="8" id="bim-A6-bsJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LR0-OI-u1o" secondAttribute="trailing" constant="-8" id="kGK-RO-PXi"/>
+                                                <constraint firstItem="LR0-OI-u1o" firstAttribute="centerX" secondItem="DYD-wx-DAY" secondAttribute="centerX" id="nBL-Sg-AQL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="jbg-ep-BaP">
+                                        <rect key="frame" x="0.0" y="303" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jbg-ep-BaP" id="SbP-Jy-Zrz">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBw-g8-R1e">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43.5" id="efh-KB-bV7"/>
+                                                        <constraint firstAttribute="width" constant="600" id="m4X-pk-TV8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Create Account"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="tBw-g8-R1e" secondAttribute="leading" constant="8" id="Bov-9Z-Oc2"/>
+                                                <constraint firstItem="tBw-g8-R1e" firstAttribute="centerY" secondItem="SbP-Jy-Zrz" secondAttribute="centerY" id="EZc-di-Z6i"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tBw-g8-R1e" secondAttribute="trailing" constant="-8" id="GV7-cz-3HN"/>
+                                                <constraint firstItem="tBw-g8-R1e" firstAttribute="centerX" secondItem="SbP-Jy-Zrz" secondAttribute="centerX" id="UTC-0s-7MY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="1Ih-YG-yn5" id="X49-aI-Gll"/>
@@ -708,8 +749,16 @@
                                 <action selector="cancelButtonTapped:" destination="1Ih-YG-yn5" id="5T4-YT-qSd"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Credits" id="no5-Qy-YdX">
+                            <connections>
+                                <segue destination="ncw-SH-qhP" kind="show" id="QHQ-B3-okF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createAccountButtonCell" destination="jbg-ep-BaP" id="5tT-9x-vnf"/>
+                        <outlet property="signinButtonCell" destination="UgJ-GI-IT0" id="wCO-dK-fHx"/>
+                        <outlet property="signoutButtonCell" destination="4oI-hl-8lz" id="jsN-WP-B59"/>
                         <outlet property="usernameTextField" destination="3fg-PR-pDz" id="Qaz-2n-PWl"/>
                     </connections>
                 </tableViewController>
@@ -717,8 +766,99 @@
             </objects>
             <point key="canvasLocation" x="166" y="942"/>
         </scene>
+        <!--Credits View Controller-->
+        <scene sceneID="Kei-pN-lxa">
+            <objects>
+                <viewController id="ncw-SH-qhP" customClass="CreditsViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xS2-XY-pYp"/>
+                        <viewControllerLayoutGuide type="bottom" id="x0v-zx-K4v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fgv-Jj-eB8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-4I-JDg">
+                                <rect key="frame" x="20" y="64" width="560" height="1586.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">© 2016 KEVIN VOELL ALL RIGHTS RESERVED
+
+WeMo is a registered trademark of the Belkin Corporation.
+ Logo Designed by Freepik and distributed by Flaticon 
+This software uses opensource under the following licenses:  Chameleon Framework Copyright (c) 2014-2015 Vicc Alexander
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  SwiftyJson The MIT License (MIT)
+
+Copyright (c) 2014 Ruoyu Fu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.  CocoaAsyncSocket Public Domain License
+
+The CocoaAsyncSocket project is in the public domain. 
+
+
+The original TCP version (AsyncSocket) was created by Dustin Voss in January 2003.
+Updated and maintained by Deusty LLC and the Apple development community.  Firebase Copyright (c) 2012, Firebase.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="PgE-4I-JDg" secondAttribute="trailing" id="QGZ-fk-xT7"/>
+                            <constraint firstItem="x0v-zx-K4v" firstAttribute="top" secondItem="PgE-4I-JDg" secondAttribute="bottom" constant="20" id="Say-Ce-AA1"/>
+                            <constraint firstItem="PgE-4I-JDg" firstAttribute="top" secondItem="xS2-XY-pYp" secondAttribute="bottom" id="csu-EN-Aaa"/>
+                            <constraint firstItem="PgE-4I-JDg" firstAttribute="leading" secondItem="fgv-Jj-eB8" secondAttribute="leadingMargin" id="wpB-tn-KVo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="creditsTextView" destination="PgE-4I-JDg" id="nEO-t3-9KZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bi0-5q-jgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="858" y="942"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w4F-C7-o24"/>
+        <segue reference="i90-t5-EgX"/>
     </inferredMetricsTieBreakers>
 </document>

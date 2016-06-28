@@ -13,9 +13,11 @@ class SigninTableViewController: UITableViewController {
 
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var signinButton: UIButton!
+  @IBOutlet weak var createAccountButton: UIButton!
   
   override func viewDidLoad() {
-
+    signinButton.backgroundColor = UIColor.flatGreenColor()
   }
   
   @IBAction func signinButtonTapped(sender: AnyObject) {
