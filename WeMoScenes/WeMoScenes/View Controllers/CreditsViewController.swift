@@ -14,7 +14,6 @@ class CreditsViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    
-    creditsTextView.setContentOffset(CGPointZero, animated: false)
+    creditsTextView.scrollRangeToVisible(NSMakeRange(0, 0))
   }
 }
