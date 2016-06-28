@@ -55,6 +55,12 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
     }
   }
   
+  func stop() {
+    if ssdpSocket != nil {
+      ssdpSocket.close()
+    }
+  }
+  
   /**
    * Called when the socket has received the requested datagram.
    **/
