@@ -70,7 +70,7 @@ class SceneTableViewController: UITableViewController,
     if section == 0 {
       return self.databaseManager.items.count
     } else {
-      if AppDelegate.manager != nil {
+      if AppDelegate.deviceModelManager != nil {
         return AppDelegate.manager!.items.count
       }
     }
@@ -88,8 +88,8 @@ class SceneTableViewController: UITableViewController,
         let item = self.databaseManager.items[indexPath.row]
         self.databaseManager.delete(item)
       } else {
-        let item = AppDelegate.manager!.items[indexPath.row]
-        AppDelegate.manager!.delete(item)
+        let item = AppDelegate.deviceModelManager!.items[indexPath.row]
+        AppDelegate.deviceModelManager!.delete(item)
       }
     })
     
@@ -186,8 +186,8 @@ class SceneTableViewController: UITableViewController,
   }
   
   func stop() {
-    AppDelegate.manager!.stopWatching()
-    AppDelegate.manager = nil
+    AppDelegate.deviceModelManager!.stopWatching()
+    AppDelegate.deviceModelManager = nil
     
     self.databaseManager.stopWatching()    
   }
@@ -198,9 +198,9 @@ class SceneTableViewController: UITableViewController,
   func setup(user: FIRUser) {
     // Start the Device watcher on the AppDelegate
     // TODO: We might be able to make this a singleton class instead of having it live on the AppDelegate.
-    AppDelegate.manager = ApiManager<DeviceModel>()
-    AppDelegate.manager!.delegate = self
-    AppDelegate.manager!.startWatching()
+    AppDelegate.deviceModelManager = ApiManager<DeviceModel>()
+    AppDelegate.deviceModelManager!.delegate = self
+    AppDelegate.deviceModelManager!.startWatching()
     
     // Start looking for devices on the local network
     // TODO: This can probably be made a singleton object
