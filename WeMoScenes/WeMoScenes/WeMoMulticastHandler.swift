@@ -58,6 +58,7 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
   func stop() {
     if ssdpSocket != nil {
       ssdpSocket.close()
+      ssdpSocket = nil
     }
   }
   
