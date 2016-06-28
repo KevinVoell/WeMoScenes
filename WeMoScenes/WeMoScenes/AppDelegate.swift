@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   /**
    * manager: Data manager for the device table.
    */
-  internal static var manager: ApiManager<DeviceModel>?
+  internal static var deviceModelManager: ApiManager<DeviceModel>?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
@@ -32,40 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Configure FireBase
     FIRApp.configure()
     
-//    FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
-//      
-//      if (user?.uid != nil) {
-//        user?.getTokenWithCompletion({ (token, error) in
-//          print(token!)
-//        })
-//        AppDelegate.user = user
-//        
-//        // TODO: Shutdown network connection.
-//        AppDelegate.manager = ApiManager<DeviceModel>()
-//        AppDelegate.manager!.startWatching()
-//    
-//        let manager = ApiManager<SceneModel>()
-//        manager.exists("All Switches", callback: { (exists) in
-//          // TODO: Create default scene.
-//          if (!exists) {
-//            let scene = SceneModel(withName: "All Switches")
-//          
-//            manager.save(scene)
-//            
-//          }
-//        })
-//        
-//        self.deviceInteration  = DeviceInteraction()
-//        self.deviceInteration!.findDevices()
-//      }
-//    }
-    
     return true
   }
 
   func applicationWillResignActive(application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    self.closeNetworkConnections()
   }
 
   func applicationDidEnterBackground(application: UIApplication) {
@@ -85,7 +59,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     
-//    /AppDelegate.deviceInteration.
+    self.closeNetworkConnections()
+  }
+  
+  func handleAuthChange(auth: FIRAuth?, user : FIRUser?) {
+    if user == nil {
+      self.closeNetworkConnections()
+    } else {
+      self.resumeNetworkConnections()
+    }
+  }
+  
+  func resumeNetworkConnections() {
+    self.deviceInteraction = DeviceInteraction()
+  }
+  
+  func closeNetworkConnections() {
+    if self.deviceInteration != nil {
+      self.deviceInteration = nil
+    }
+    
+    // TODO: Shutdown other connections
   }
 
 }
