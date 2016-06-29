@@ -20,19 +20,34 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
    */
   weak var delegate: WeMoDiscoveryDelegate?
   
+  class var sharedInstance: WeMoMulticastHandler {
+    struct Singleton {
+      static let instance = WeMoMulticastHandler()
+    }
+
+    return Singleton.instance
+  }
+    
+  private init() {
+    
+  }
+  
   deinit {
     print("Deinit called on WeMoMulticastHandler")
     
-    ssdpSocket.close()
-    ssdpSocket = nil
+    if ssdpSocket != nil {
+      ssdpSocket.close()
+      ssdpSocket = nil
+    }
   }
   
   /**
    * Runs the discovery multicast code.
    */
   func start() {
-    for i in 0...20
-    {
+    //for i in 0...20
+    //{
+    let i = 0
       do
       {
         //send M-Search
@@ -50,9 +65,9 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
       catch let unknownError
       {
         // Error
-        print(unknownError)
+        print("Error during i=\(i) : \(unknownError)")
       }
-    }
+    //}
   }
   
   func stop() {

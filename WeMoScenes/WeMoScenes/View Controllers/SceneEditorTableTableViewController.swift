@@ -36,7 +36,7 @@ class SceneEditorTableTableViewController:
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.manager = AppDelegate.manager
+    self.manager = AppDelegate.deviceModelManager
     
     
     if self.currentModel == nil {

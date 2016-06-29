@@ -12,8 +12,8 @@ class CreditsViewController: UIViewController {
 
   @IBOutlet weak var creditsTextView: UITextView!
   
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    creditsTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    creditsTextView.setContentOffset(CGPointZero, animated: false)
   }
 }

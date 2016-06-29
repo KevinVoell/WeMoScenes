@@ -20,23 +20,31 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   
   static let soapCommandEnd = "</s:Body></s:Envelope>"
   
-  private var discovery: WeMoMulticastHandler?
+  //private var discovery: WeMoMulticastHandler?
   
   internal var devices: Array<DeviceModel> = Array<DeviceModel>()
   
   private var databaseReference: FIRDatabaseReference!
   
-  public init() {
+  class var sharedInstance: DeviceInteraction {
+    struct Singleton {
+      static let instance = DeviceInteraction()
+    }
+    
+    return Singleton.instance
+  }
+  
+  private init() {
     print("Called init on DeviceInteraction")
   
+    WeMoMulticastHandler.sharedInstance.delegate = self
     self.databaseReference = FIRDatabase.database().reference()    
   }
   
   deinit {
     print("Called deinit on DeviceInteraction")
     
-    discovery.stop()
-    discovery = nil
+    WeMoMulticastHandler.sharedInstance.stop()
   }
   
   /**
@@ -129,9 +137,8 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   internal func findDevices() -> Array<DeviceModel> {
     let devices = Array<DeviceModel>()
     
-    discovery = WeMoMulticastHandler();
-    discovery?.delegate = self
-    discovery!.start()
+    WeMoMulticastHandler.sharedInstance.stop()
+    WeMoMulticastHandler.sharedInstance.start()
     
     return devices
   }

@@ -13,8 +13,6 @@ class SettingsTableViewController: UITableViewController {
   @IBOutlet weak var signoutButtonCell: UITableViewCell!
   @IBOutlet weak var usernameTextField: UILabel!
   
-  @IBOutlet weak var signinButtonCell: UITableViewCell!
-  @IBOutlet weak var createAccountButtonCell: UITableViewCell!
   @IBAction func cancelButtonTapped(sender: AnyObject) {
     self.dismissViewControllerAnimated(true, completion: nil)
   }
@@ -25,15 +23,8 @@ class SettingsTableViewController: UITableViewController {
     if let user = FIRAuth.auth()?.currentUser {
       if user.anonymous {
         usernameTextField.text = "Anonymous"
-        signoutButtonCell.hidden = true
-        signoutButtonCell.clipsToBounds = true
-        createAccountButtonCell.hidden = false
-        signinButtonCell.hidden = false
       } else {
         usernameTextField.text = user.email
-        signoutButtonCell.hidden = false
-        createAccountButtonCell.hidden = true
-        signinButtonCell.hidden = true
       }
     }
   }

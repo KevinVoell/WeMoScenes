@@ -17,7 +17,7 @@ class CreateAccountTableViewController: UITableViewController {
   
   @IBAction func createAccountTapped(sender: AnyObject) {
     if emailTextField.text! == "" {
-      self.showAlert("Error", "Please enter an Email Address")
+      self.showAlert("Error", message: "Please enter an Email Address")
     } else if passwordTextField.text! != confirmPasswordTextfield.text! {
       let alert = UIAlertController(title: "Error", message: "Passwords must match, please try again.", preferredStyle: .Alert)
       
@@ -28,19 +28,19 @@ class CreateAccountTableViewController: UITableViewController {
         self.confirmPasswordTextfield.text = ""
       })
     } else {
-      if FIRAuth.auth()?.currentUser != nil && FIRAuth.auth()?.currentUser.anonymous {
+      if FIRAuth.auth()?.currentUser != nil && (FIRAuth.auth()?.currentUser!.anonymous)! {
         // Link account
         let credential = FIREmailPasswordAuthProvider.credentialWithEmail(emailTextField.text!, password: passwordTextField.text!)
         
-        FIRAuth.auth()?.currentUser.linkWithCredential(credential, completion: handleAccountCreation) 
+        FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: handleAccountCreation)
       } else {
         // Create account
-        FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: handleAccountCreation)
+        FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: self.handleAccountCreation)
       }
     }
   }
   
-  func handleAccountCreation((user, error)) {
+  func handleAccountCreation(user: FIRUser?, error: NSError?) {
     if error != nil {
       let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
       

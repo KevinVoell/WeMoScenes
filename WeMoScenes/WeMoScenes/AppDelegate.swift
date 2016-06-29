@@ -15,8 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   
-  internal static var deviceInteration: DeviceInteraction = DeviceInteraction()
-  
   /**
    * manager: Data manager for the device table.
    */
@@ -31,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Configure FireBase
     FIRApp.configure()
+    FIRAuth.auth()?.addAuthStateDidChangeListener(self.handleAuthChange)
     
     return true
   }
@@ -71,13 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func resumeNetworkConnections() {
-    self.deviceInteraction = DeviceInteraction()
+    
   }
   
   func closeNetworkConnections() {
-    if self.deviceInteration != nil {
-      self.deviceInteration = nil
-    }
+    
     
     // TODO: Shutdown other connections
   }

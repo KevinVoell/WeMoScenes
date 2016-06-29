@@ -161,7 +161,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REd-ep-daL">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                                    <state key="normal" title="Signin Anonomously"/>
+                                                    <state key="normal" title="Try without account"/>
                                                     <connections>
                                                         <action selector="signinAnonymouslyTapped:" destination="EgG-Md-qSE" eventType="touchUpInside" id="bEr-zz-l6d"/>
                                                     </connections>
@@ -520,7 +520,7 @@
             </objects>
             <point key="canvasLocation" x="937" y="-567"/>
         </scene>
-        <!--wemo Scenes-->
+        <!--WeMo Scenes-->
         <scene sceneID="UWb-Cu-b2M">
             <objects>
                 <tableViewController id="yb9-6J-F0p" customClass="SceneTableViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
@@ -577,7 +577,7 @@
                             <outlet property="delegate" destination="yb9-6J-F0p" id="Xo9-PL-lnS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="wemo Scenes" id="6j3-Jn-iIv">
+                    <navigationItem key="navigationItem" title="WeMo Scenes" id="6j3-Jn-iIv">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="2PV-SW-Pnt">
                             <connections>
                                 <segue destination="Afq-jd-gul" kind="presentation" identifier="settingsSegue" id="gu2-wN-Bzv"/>
@@ -589,6 +589,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="YQc-hh-UTB">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <segue destination="O9K-Yk-bQa" kind="presentation" identifier="editSceneSegue" id="w4F-C7-o24"/>
                         <segue destination="1Qc-SK-M1f" kind="presentation" identifier="signinSegue" id="yDr-9M-ga0"/>
@@ -682,56 +685,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="h8c-pb-hIE">
+                            <tableViewSection id="7xk-0O-UQc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="UgJ-GI-IT0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="c9d-dY-aB4">
                                         <rect key="frame" x="0.0" y="259" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UgJ-GI-IT0" id="DYD-wx-DAY">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c9d-dY-aB4" id="eF3-ke-cfV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR0-OI-u1o">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woO-fF-Jmo">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="600" id="GeU-fq-L63"/>
-                                                        <constraint firstAttribute="height" constant="43.5" id="eej-18-cp8"/>
+                                                        <constraint firstAttribute="width" constant="600" id="3Pl-iF-etv"/>
+                                                        <constraint firstAttribute="height" constant="43.5" id="con-Sz-f3K"/>
                                                     </constraints>
-                                                    <state key="normal" title="Signin"/>
+                                                    <state key="normal" title="Acknowledgments"/>
                                                     <connections>
-                                                        <segue destination="EgG-Md-qSE" kind="show" id="i90-t5-EgX"/>
+                                                        <segue destination="ncw-SH-qhP" kind="show" id="AfB-Ua-PXY"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="LR0-OI-u1o" firstAttribute="centerY" secondItem="DYD-wx-DAY" secondAttribute="centerY" id="b4P-08-24U"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="LR0-OI-u1o" secondAttribute="leading" constant="8" id="bim-A6-bsJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="LR0-OI-u1o" secondAttribute="trailing" constant="-8" id="kGK-RO-PXi"/>
-                                                <constraint firstItem="LR0-OI-u1o" firstAttribute="centerX" secondItem="DYD-wx-DAY" secondAttribute="centerX" id="nBL-Sg-AQL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="jbg-ep-BaP">
-                                        <rect key="frame" x="0.0" y="303" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jbg-ep-BaP" id="SbP-Jy-Zrz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBw-g8-R1e">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43.5" id="efh-KB-bV7"/>
-                                                        <constraint firstAttribute="width" constant="600" id="m4X-pk-TV8"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Create Account"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="tBw-g8-R1e" secondAttribute="leading" constant="8" id="Bov-9Z-Oc2"/>
-                                                <constraint firstItem="tBw-g8-R1e" firstAttribute="centerY" secondItem="SbP-Jy-Zrz" secondAttribute="centerY" id="EZc-di-Z6i"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tBw-g8-R1e" secondAttribute="trailing" constant="-8" id="GV7-cz-3HN"/>
-                                                <constraint firstItem="tBw-g8-R1e" firstAttribute="centerX" secondItem="SbP-Jy-Zrz" secondAttribute="centerX" id="UTC-0s-7MY"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="woO-fF-Jmo" secondAttribute="leading" constant="8" id="JVJ-Tu-3I7"/>
+                                                <constraint firstItem="woO-fF-Jmo" firstAttribute="centerY" secondItem="eF3-ke-cfV" secondAttribute="centerY" id="LgO-xz-G0X"/>
+                                                <constraint firstItem="woO-fF-Jmo" firstAttribute="centerX" secondItem="eF3-ke-cfV" secondAttribute="centerX" id="lRf-V6-RrL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="woO-fF-Jmo" secondAttribute="trailing" constant="-8" id="oGY-cb-5th"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -749,15 +728,8 @@
                                 <action selector="cancelButtonTapped:" destination="1Ih-YG-yn5" id="5T4-YT-qSd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Credits" id="no5-Qy-YdX">
-                            <connections>
-                                <segue destination="ncw-SH-qhP" kind="show" id="QHQ-B3-okF"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="createAccountButtonCell" destination="jbg-ep-BaP" id="5tT-9x-vnf"/>
-                        <outlet property="signinButtonCell" destination="UgJ-GI-IT0" id="wCO-dK-fHx"/>
                         <outlet property="signoutButtonCell" destination="4oI-hl-8lz" id="jsN-WP-B59"/>
                         <outlet property="usernameTextField" destination="3fg-PR-pDz" id="Qaz-2n-PWl"/>
                     </connections>
@@ -766,10 +738,10 @@
             </objects>
             <point key="canvasLocation" x="166" y="942"/>
         </scene>
-        <!--Credits View Controller-->
+        <!--Acknowledgments-->
         <scene sceneID="Kei-pN-lxa">
             <objects>
-                <viewController id="ncw-SH-qhP" customClass="CreditsViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Acknowledgments" id="ncw-SH-qhP" customClass="CreditsViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xS2-XY-pYp"/>
                         <viewControllerLayoutGuide type="bottom" id="x0v-zx-K4v"/>
@@ -778,20 +750,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-4I-JDg">
-                                <rect key="frame" x="20" y="64" width="560" height="1586.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZH-fc-N6h">
+                                <rect key="frame" x="534" y="34" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-4I-JDg">
+                                <rect key="frame" x="20" y="64" width="560" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">© 2016 KEVIN VOELL ALL RIGHTS RESERVED
+                                <attributedString key="attributedText">
+                                    <fragment content="WeMo Scenes - Version 1.0">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
 
-WeMo is a registered trademark of the Belkin Corporation.
- Logo Designed by Freepik and distributed by Flaticon 
-This software uses opensource under the following licenses:  Chameleon Framework Copyright (c) 2014-2015 Vicc Alexander
+Copyright © 2016 by KEVIN VOELL 
+
+iPhone, iPod touch, iPad, iCloud, iOS, Mac, and Siri are trademarks of Apple Inc., registered in the U.S. and other countries. 
+WeMo is a registered trademark of Belkin International, inc.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Third Party Source Code">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+ "Lightbulb" logo Designed by Freepik and distributed by Flaticon   </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Chameleon Framework">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Copyright (c) 2014-2015 Vicc Alexander
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  SwiftyJson The MIT License (MIT)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="SwiftyJson">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                            <font key="NSOriginalFont" size="12" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> The MIT License (MIT)
 
 Copyright (c) 2014 Ruoyu Fu
 
@@ -811,7 +839,21 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.  CocoaAsyncSocket Public Domain License
+THE SOFTWARE.  </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="CocoaAsyncSocket">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                            <font key="NSOriginalFont" size="12" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Public Domain License
 
 The CocoaAsyncSocket project is in the public domain. 
 
@@ -835,17 +877,22 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+SOFTWARE.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="PgE-4I-JDg" secondAttribute="trailing" id="QGZ-fk-xT7"/>
-                            <constraint firstItem="x0v-zx-K4v" firstAttribute="top" secondItem="PgE-4I-JDg" secondAttribute="bottom" constant="20" id="Say-Ce-AA1"/>
-                            <constraint firstItem="PgE-4I-JDg" firstAttribute="top" secondItem="xS2-XY-pYp" secondAttribute="bottom" id="csu-EN-Aaa"/>
-                            <constraint firstItem="PgE-4I-JDg" firstAttribute="leading" secondItem="fgv-Jj-eB8" secondAttribute="leadingMargin" id="wpB-tn-KVo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PgE-4I-JDg" secondAttribute="trailing" id="6xj-uN-0cr"/>
+                            <constraint firstItem="PgE-4I-JDg" firstAttribute="top" secondItem="xS2-XY-pYp" secondAttribute="bottom" id="a0r-lK-dG9"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PgE-4I-JDg" secondAttribute="leading" id="sR1-cY-uxh"/>
+                            <constraint firstItem="x0v-zx-K4v" firstAttribute="top" secondItem="PgE-4I-JDg" secondAttribute="bottom" constant="8" id="y3N-8F-YDP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -854,11 +901,10 @@ SOFTWARE.</mutableString>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bi0-5q-jgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="942"/>
+            <point key="canvasLocation" x="937" y="942"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w4F-C7-o24"/>
-        <segue reference="i90-t5-EgX"/>
     </inferredMetricsTieBreakers>
 </document>

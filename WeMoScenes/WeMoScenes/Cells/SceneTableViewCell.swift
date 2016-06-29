@@ -51,14 +51,14 @@ internal class SceneTableViewCell: UITableViewCell {
       }
       
       if self.scene?.name == "All Switches" {
-        for device in (AppDelegate.manager?.items)! {
+        for device in (AppDelegate.deviceModelManager?.items)! {
           device.on()
         }
       }  else {
         
         for device in (self.scene?.devices)! {
           
-          if let realDevice = (AppDelegate.manager?.items)?.findFirstMatching({$0.UDN == device.deviceId}) {
+          if let realDevice = (AppDelegate.deviceModelManager?.items)?.findFirstMatching({$0.UDN == device.deviceId}) {
             
             if device.state == SceneDeviceModel.StateValues.On  {
               realDevice.on()
@@ -77,14 +77,14 @@ internal class SceneTableViewCell: UITableViewCell {
       }
       
       if self.scene?.name == "All Switches" {
-        for device in (AppDelegate.manager?.items)! {
+        for device in (AppDelegate.deviceModelManager?.items)! {
           device.off()
         }
       } else {
         
         for device in (self.scene?.devices)! {
           
-          if let realDevice = (AppDelegate.manager?.items)?.findFirstMatching({$0.UDN == device.deviceId}) {
+          if let realDevice = (AppDelegate.deviceModelManager?.items)?.findFirstMatching({$0.UDN == device.deviceId}) {
             if device.state == SceneDeviceModel.StateValues.On || device.state == SceneDeviceModel.StateValues.Off  {
               realDevice.off()
             }

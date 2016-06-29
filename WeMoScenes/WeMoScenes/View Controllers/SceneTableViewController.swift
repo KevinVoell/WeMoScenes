@@ -31,11 +31,19 @@ class SceneTableViewController: UITableViewController,
     self.tableView.delegate = self
     self.tableView.dataSource = self
     
+    self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+    
     FIRAuth.auth()?.addAuthStateDidChangeListener(self.handleAuthChange)
   }
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 2
+  }
+  
+  func handleRefresh(refreshControl: UIRefreshControl) {
+    DeviceInteraction.sharedInstance.findDevices()
+
+    refreshControl.endRefreshing()
   }
   
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -57,7 +65,7 @@ class SceneTableViewController: UITableViewController,
       cell.title.text = item.name
       cell.scene = item
     } else {
-      let item = AppDelegate.manager?.items[indexPath.row]
+      let item = AppDelegate.deviceModelManager?.items[indexPath.row]
       
       cell.title.text = item?.friendlyName
       cell.device = item
@@ -71,7 +79,7 @@ class SceneTableViewController: UITableViewController,
       return self.databaseManager.items.count
     } else {
       if AppDelegate.deviceModelManager != nil {
-        return AppDelegate.manager!.items.count
+        return AppDelegate.deviceModelManager!.items.count
       }
     }
     
@@ -81,6 +89,8 @@ class SceneTableViewController: UITableViewController,
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     return true
   }
+  
+  
   
   override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
     let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
@@ -173,7 +183,7 @@ class SceneTableViewController: UITableViewController,
         return
       }
       
-      if (AppDelegate.manager != nil) {
+      if (AppDelegate.deviceModelManager != nil) {
         return
       }
       
@@ -186,10 +196,12 @@ class SceneTableViewController: UITableViewController,
   }
   
   func stop() {
-    AppDelegate.deviceModelManager!.stopWatching()
-    AppDelegate.deviceModelManager = nil
+    if AppDelegate.deviceModelManager != nil {
+      AppDelegate.deviceModelManager!.stopWatching()
+      AppDelegate.deviceModelManager = nil
+    }
     
-    self.databaseManager.stopWatching()    
+    self.databaseManager.stopWatching()
   }
   
   /** 
@@ -203,9 +215,7 @@ class SceneTableViewController: UITableViewController,
     AppDelegate.deviceModelManager!.startWatching()
     
     // Start looking for devices on the local network
-    // TODO: This can probably be made a singleton object
-    //AppDelegate.deviceInteration  = DeviceInteraction()
-    AppDelegate.deviceInteration.findDevices()
+    DeviceInteraction.sharedInstance.findDevices()
     
     // Start Scene watcher
     self.databaseManager.delegate = self;
