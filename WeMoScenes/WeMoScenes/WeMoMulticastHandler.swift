@@ -14,6 +14,7 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
   var ssdpAddres          = "239.255.255.250"
   var ssdpPort:UInt16     = 1900
   var ssdpSocket:GCDAsyncUdpSocket!
+  var connected           = false
   
   /**
    * Delegate called when a device is found.
@@ -45,29 +46,31 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
    * Runs the discovery multicast code.
    */
   func start() {
-    //for i in 0...20
-    //{
-    let i = 0
-      do
-      {
-        //send M-Search
-        ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
-        
-        let data = "M-SEARCH * HTTP/1.1\r\nContent-Length:0\r\nHOST:239.255.255.250:1900\r\nST: upnp:rootdevice\r\nMX:\(i)\r\nMAN:\"ssdp:discover\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)
-        
-        ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
-        
-        //bind for responses
-        try ssdpSocket.bindToPort(ssdpPort)
-        try ssdpSocket.joinMulticastGroup(ssdpAddres)
-        try ssdpSocket.beginReceiving()
-      }
-      catch let unknownError
-      {
-        // Error
-        print("Error during i=\(i) : \(unknownError)")
-      }
-    //}
+    ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
+    
+    // TODO: Can we move this to after the bind for response?
+    // Seems like we should begin receiving first then send?  Maybe?
+    self.sendData()
+    
+    do {        
+      //bind for responses
+      try ssdpSocket.bindToPort(ssdpPort)
+      try ssdpSocket.joinMulticastGroup(ssdpAddres)
+      try ssdpSocket.beginReceiving()
+    }
+    catch let unknownError
+    {
+      // Error
+      print("Error during i=\(i) : \(unknownError)")
+    }
+  }  
+  
+  private func sendData() {
+    for i in 0...20 {
+      let data = "M-SEARCH * HTTP/1.1\r\nContent-Length:0\r\nHOST:239.255.255.250:1900\r\nST: upnp:rootdevice\r\nMX:\(i)\r\nMAN:\"ssdp:discover\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)
+
+      ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
+    }
   }
   
   func stop() {
