@@ -30,7 +30,19 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
   }
     
   private init() {
+    ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
     
+    do {        
+      //bind for responses
+      try ssdpSocket.bindToPort(ssdpPort)
+      try ssdpSocket.joinMulticastGroup(ssdpAddres)
+      try ssdpSocket.beginReceiving()
+    }
+    catch let unknownError
+    {
+      // Error
+      print(unknownError!)
+    }
   }
   
   deinit {
@@ -45,33 +57,14 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
   /**
    * Runs the discovery multicast code.
    */
-  func start() {
-    ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
-    
-    // TODO: Can we move this to after the bind for response?
-    // Seems like we should begin receiving first then send?  Maybe?
-    self.sendData()
-    
-    do {        
-      //bind for responses
-      try ssdpSocket.bindToPort(ssdpPort)
-      try ssdpSocket.joinMulticastGroup(ssdpAddres)
-      try ssdpSocket.beginReceiving()
-    }
-    catch let unknownError
-    {
-      // Error
-      print("Error during i=\(i) : \(unknownError)")
-    }
-  }  
-  
-  private func sendData() {
+  func findDevices() {
+    // TODO: Add UserAgent, fix MAN Parameter, and move this to a class constant
     let data = "M-SEARCH * HTTP/1.1\r\nContent-Length:0\r\nHOST:239.255.255.250:1900\r\nST: upnp:rootdevice\r\nMX:4\r\nMAN:\"ssdp:discover\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)
 
     ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
   }
   
-  func stop() {
+  func close() {
     if ssdpSocket != nil {
       ssdpSocket.close()
       ssdpSocket = nil
