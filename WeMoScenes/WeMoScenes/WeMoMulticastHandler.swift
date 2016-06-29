@@ -16,6 +16,14 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
   var ssdpSocket:GCDAsyncUdpSocket!
   var connected           = false
   
+  let data = "M-SEARCH * HTTP/1.1\r\n"
+             + "Content-Length:0\r\n"
+             + "HOST:239.255.255.250:1900\r\n"
+             + "ST: upnp:rootdevice\r\n"
+             + "MX:5\r\n"
+             + "MAN:\"ssdp:discover\"\r\n"
+             + "\r\n".dataUsingEncoding(NSUTF8StringEncoding)
+  
   /**
    * Delegate called when a device is found.
    */
@@ -58,9 +66,6 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
    * Runs the discovery multicast code.
    */
   func findDevices() {
-    // TODO: Add UserAgent, fix MAN Parameter, and move this to a class constant
-    let data = "M-SEARCH * HTTP/1.1\r\nContent-Length:0\r\nHOST:239.255.255.250:1900\r\nST: upnp:rootdevice\r\nMX:4\r\nMAN:\"ssdp:discover\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)
-
     ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
   }
   
