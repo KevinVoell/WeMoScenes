@@ -66,11 +66,9 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
   }  
   
   private func sendData() {
-    for i in 0...20 {
-      let data = "M-SEARCH * HTTP/1.1\r\nContent-Length:0\r\nHOST:239.255.255.250:1900\r\nST: upnp:rootdevice\r\nMX:\(i)\r\nMAN:\"ssdp:discover\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)
+    let data = "M-SEARCH * HTTP/1.1\r\nContent-Length:0\r\nHOST:239.255.255.250:1900\r\nST: upnp:rootdevice\r\nMX:4\r\nMAN:\"ssdp:discover\"\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)
 
-      ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
-    }
+    ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
   }
   
   func stop() {
