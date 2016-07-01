@@ -185,6 +185,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Signin" id="sjh-f9-PWv"/>
                     <connections>
+                        <outlet property="anonymousButtonCell" destination="Cyn-ko-zo2" id="THt-is-Mtt"/>
                         <outlet property="createAccountButton" destination="BZq-e5-5D9" id="Dll-iq-wt8"/>
                         <outlet property="emailTextField" destination="lG7-dS-OXd" id="XEX-jI-peR"/>
                         <outlet property="passwordTextField" destination="46b-sz-qdz" id="R9s-Kz-85P"/>
@@ -193,7 +194,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FON-du-mtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147" y="-1293"/>
+            <point key="canvasLocation" x="113" y="-1316"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="crn-55-SbP">
@@ -585,7 +586,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDN-Ku-Iqk">
                             <connections>
-                                <segue destination="O9K-Yk-bQa" kind="presentation" identifier="newSceneSegue" id="ehu-b1-XWt"/>
+                                <action selector="addButtonTapped:" destination="yb9-6J-F0p" id="9s2-6n-bw9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -595,6 +596,7 @@
                     <connections>
                         <segue destination="O9K-Yk-bQa" kind="presentation" identifier="editSceneSegue" id="w4F-C7-o24"/>
                         <segue destination="1Qc-SK-M1f" kind="presentation" identifier="signinSegue" id="yDr-9M-ga0"/>
+                        <segue destination="O9K-Yk-bQa" kind="presentation" identifier="newSceneSegue" id="ePl-ET-Yxc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxg-im-IbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -671,7 +673,7 @@
                                                     </constraints>
                                                     <state key="normal" title="Signout"/>
                                                     <connections>
-                                                        <action selector="signoutTapped:" destination="1Ih-YG-yn5" eventType="touchUpInside" id="45A-Gb-1Vs"/>
+                                                        <action selector="signoutTapped:" destination="1Ih-YG-yn5" eventType="touchUpInside" id="Suh-aS-lKO"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -730,8 +732,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="signoutButton" destination="q1U-bh-Yjz" id="Vwe-aw-KCQ"/>
                         <outlet property="signoutButtonCell" destination="4oI-hl-8lz" id="jsN-WP-B59"/>
                         <outlet property="usernameTextField" destination="3fg-PR-pDz" id="Qaz-2n-PWl"/>
+                        <segue destination="EgG-Md-qSE" kind="show" identifier="createAccountSegue" id="G0J-ce-P4M"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KP7-jb-spX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -760,7 +764,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="WeMo Scenes - Version 1.0">
                                         <attributes>
-                                            <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                            <font key="NSFont" size="18" name="Arial-BoldMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -778,15 +782,69 @@ WeMo is a registered trademark of Belkin International, inc.
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
+                                    <fragment>
+                                        <string key="content">"Lightbulb" logo Designed by Freepik and distributed by Flaticon
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
                                     <fragment content="Third Party Source Code">
                                         <attributes>
                                             <font key="NSFont" size="14" name="Arial-BoldMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment>
-                                        <string key="content">
- "Lightbulb" logo Designed by Freepik and distributed by Flaticon   </string>
+                                    <fragment content="  ">
                                         <attributes>
                                             <font key="NSFont" size="11" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -859,7 +917,20 @@ The CocoaAsyncSocket project is in the public domain.
 
 
 The original TCP version (AsyncSocket) was created by Dustin Voss in January 2003.
-Updated and maintained by Deusty LLC and the Apple development community.  Firebase Copyright (c) 2012, Firebase.
+Updated and maintained by Deusty LLC and the Apple development community.  </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Firebase">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Copyright (c) 2012, Firebase.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -905,6 +976,7 @@ SOFTWARE.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w4F-C7-o24"/>
+        <segue reference="ePl-ET-Yxc"/>
+        <segue reference="G0J-ce-P4M"/>
     </inferredMetricsTieBreakers>
 </document>

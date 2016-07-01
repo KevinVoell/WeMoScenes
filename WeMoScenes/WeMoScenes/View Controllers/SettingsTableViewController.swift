@@ -12,17 +12,20 @@ import FirebaseAuth
 class SettingsTableViewController: UITableViewController {
   @IBOutlet weak var signoutButtonCell: UITableViewCell!
   @IBOutlet weak var usernameTextField: UILabel!
+  @IBOutlet weak var signoutButton: UIButton!
   
   @IBAction func cancelButtonTapped(sender: AnyObject) {
     self.dismissViewControllerAnimated(true, completion: nil)
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     
     if let user = FIRAuth.auth()?.currentUser {
       if user.anonymous {
         usernameTextField.text = "Anonymous"
+        
+        //signoutButton.setTitle("Create Account", forState: .Normal)
       } else {
         usernameTextField.text = user.email
       }
@@ -30,10 +33,20 @@ class SettingsTableViewController: UITableViewController {
   }
   
   @IBAction func signoutTapped(sender: AnyObject) {
-    do {
-      try FIRAuth.auth()?.signOut()
-    } catch let signOutError as NSError {
-      print(signOutError)
+    if let user = FIRAuth.auth()?.currentUser {
+      if user.anonymous {
+        do {
+          try FIRAuth.auth()!.currentUser?.deleteWithCompletion(nil)
+        } catch let signOutError as NSError {
+          print(signOutError)
+        }
+      } else {
+        do {
+          try FIRAuth.auth()!.signOut()
+        } catch let signOutError as NSError {
+          print(signOutError)
+        }
+      }
     }
   }
 }

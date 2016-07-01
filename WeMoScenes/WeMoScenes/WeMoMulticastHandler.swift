@@ -20,24 +20,36 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
              + "Content-Length:0\r\n"
              + "HOST:239.255.255.250:1900\r\n"
              + "ST: upnp:rootdevice\r\n"
-             + "MX:5\r\n"
+             + "MX:2\r\n"
              + "MAN:\"ssdp:discover\"\r\n"
-             + "\r\n".dataUsingEncoding(NSUTF8StringEncoding)
+             + "\r\n"
+  
+  var datagram: NSData!
   
   /**
    * Delegate called when a device is found.
    */
   weak var delegate: WeMoDiscoveryDelegate?
   
-  class var sharedInstance: WeMoMulticastHandler {
-    struct Singleton {
-      static let instance = WeMoMulticastHandler()
-    }
-
-    return Singleton.instance
-  }
+  private struct Singleton {
+    private static var instance: WeMoMulticastHandler?
     
+    private static func Instance() -> WeMoMulticastHandler {
+      if instance == nil {
+        instance = WeMoMulticastHandler()
+      }
+      
+      return instance!
+    }
+  }
+  
+  class var sharedInstance: WeMoMulticastHandler {
+    return Singleton.Instance()
+  }
+  
   private init() {
+    print("init called on WeMoMulticastHandler")
+    
     ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
     
     do {        
@@ -49,8 +61,10 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
     catch let unknownError
     {
       // Error
-      print(unknownError!)
+      print(unknownError)
     }
+    
+    self.datagram = data.dataUsingEncoding(NSUTF8StringEncoding)
   }
   
   deinit {
@@ -66,14 +80,15 @@ class WeMoMulticastHandler : GCDAsyncUdpSocketDelegate {
    * Runs the discovery multicast code.
    */
   func findDevices() {
-    ssdpSocket.sendData(data, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
+    ssdpSocket.sendData(datagram, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
   }
   
   func close() {
-    if ssdpSocket != nil {
-      ssdpSocket.close()
-      ssdpSocket = nil
-    }
+    Singleton.instance = nil
+//    if ssdpSocket != nil {
+//      ssdpSocket.close()
+//      ssdpSocket = nil
+//    }
   }
   
   /**

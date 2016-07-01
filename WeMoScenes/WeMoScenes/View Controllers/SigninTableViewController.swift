@@ -15,9 +15,14 @@ class SigninTableViewController: UITableViewController {
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var signinButton: UIButton!
   @IBOutlet weak var createAccountButton: UIButton!
+  @IBOutlet weak var anonymousButtonCell: UITableViewCell!
   
   override func viewDidLoad() {
     signinButton.backgroundColor = UIColor.flatGreenColor()
+    
+    if FIRAuth.auth()?.currentUser != nil {
+      anonymousButtonCell.hidden = true
+    }
   }
   
   @IBAction func signinButtonTapped(sender: AnyObject) {
@@ -40,24 +45,7 @@ class SigninTableViewController: UITableViewController {
             self.passwordTextField.text = ""
           })
         } else {
-          
-          if !user!.emailVerified {
-            let alert = UIAlertController(title: "Email Not Verified", message: "Please verify your email address.", preferredStyle: .Alert)
-            
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-            
-            alert.addAction(UIAlertAction(title: "Resend", style: .Default, handler: { (action) in
-              user!.sendEmailVerificationWithCompletion({ (error) in
-                let alert2 = UIAlertController(title: "Verify Email", message: "Check your email to confirm your account.", preferredStyle: .Alert)
-                
-                alert2.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-                
-                self.presentViewController(alert2, animated: true, completion: nil)
-              })
-            }))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
-          }
+        
         }
       })
     }
@@ -68,6 +56,19 @@ class SigninTableViewController: UITableViewController {
     - parameter sender: The button that was tapped
   */
   @IBAction func signinAnonymouslyTapped(sender: AnyObject) {
-    FIRAuth.auth()!.signInAnonymouslyWithCompletion(nil)
+    let alert = UIAlertController(title: "Confirm", message: "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nContinue without creating an account?", preferredStyle: .Alert)
+
+    alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+
+    alert.addAction(UIAlertAction(title: "Continue", style: .Default, handler: { (action) in
+      FIRAuth.auth()!.signInAnonymouslyWithCompletion({ (user, error) in
+        let manager = ApiManager<SceneModel>()
+        let scene = SceneModel(withName: "All Switches")
+        manager.save(scene)
+        })
+      })
+    )
+
+    self.presentViewController(alert, animated: true, completion: nil)
   }
 }

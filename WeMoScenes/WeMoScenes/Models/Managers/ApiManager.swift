@@ -32,12 +32,43 @@ internal class ApiManager<T: ModelBase> {
    */
   private var queryHandle: UInt?
   
+  internal var watching: Bool! = false
+  
+  private var shutdownListenerObjectProtocol: NSObjectProtocol?
+  private var startListenersObjectProtocol: NSObjectProtocol?
+  
   /**
    * Deinitializer
    */
   deinit {
-    print("deinit called on ApiManager")
+    print("deinit called on ApiManager: \(T.tableName!)")
     self.stopWatching()
+    
+    NSNotificationCenter.defaultCenter().removeObserver(shutdownListenerObjectProtocol!)
+    NSNotificationCenter.defaultCenter().removeObserver(startListenersObjectProtocol!)
+  }
+  
+  init() {
+    print("init called on ApiManager: \(T.tableName!)")
+    
+    shutdownListenerObjectProtocol = NSNotificationCenter.defaultCenter().addObserverForName("shutdownListeners", object: nil, queue: nil)
+    {
+      [unowned self]
+      (notification) in
+      if self.queryHandle != nil {
+        print("Shutting down listeners")
+        self.stopWatching()
+      }
+    }
+    
+    startListenersObjectProtocol = NSNotificationCenter.defaultCenter().addObserverForName("startListeners", object: nil, queue: nil) {
+      [unowned self]
+      (notification) in
+      if self.queryHandle == nil {
+        print("Restarting listeners")
+        self.startWatching()
+      }
+    }
   }
   
   /**
@@ -88,6 +119,8 @@ internal class ApiManager<T: ModelBase> {
    */
   internal func startWatching() {
     
+    self.watching = true
+    
     let query = self.databaseReference
       .child(T.tableName!)
       .child((FIRAuth.auth()?.currentUser!.uid)!)
@@ -113,9 +146,11 @@ internal class ApiManager<T: ModelBase> {
         self.items.sortInPlace({ (model1, model2) -> Bool in
           return model1.key < model2.key
         })
-        
-        self.delegate?.itemAdded()
+      } else {
+        self.items.removeAll()
       }
+      
+      self.delegate?.itemAdded()
     })
   }
   
@@ -123,6 +158,8 @@ internal class ApiManager<T: ModelBase> {
    * stopWatching: Stop watching for changes to the database.
    */
   internal func stopWatching() {
+    self.watching = false
+    
     if queryHandle != nil {
       self.databaseReference.removeObserverWithHandle(queryHandle!)
       queryHandle = nil

@@ -31,7 +31,7 @@ class SceneTableViewController: UITableViewController,
     self.tableView.delegate = self
     self.tableView.dataSource = self
     
-    self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+    self.refreshControl?.addTarget(self, action: #selector(SceneTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     
     FIRAuth.auth()?.addAuthStateDidChangeListener(self.handleAuthChange)
   }
@@ -173,32 +173,31 @@ class SceneTableViewController: UITableViewController,
         self.performSegueWithIdentifier("signinSegue", sender: nil)
       }
     } else {
-      if !user!.anonymous && !user!.emailVerified {
-        do {
-          try FIRAuth.auth()?.signOut()
-        } catch let signOutError as NSError {
-          print(signOutError)
-        }
-        
-        return
-      }
+//      if !user!.anonymous && !user!.emailVerified {
+//        do {
+//          try FIRAuth.auth()?.signOut()
+//        } catch let signOutError as NSError {
+//          print(signOutError)
+//        }
+//        
+//        return
+//      }
       
-      if (AppDelegate.deviceModelManager != nil) {
-        return
-      }
+//      if AppDelegate.deviceModelManager != nil && AppDelegate.deviceModelManager!.watching! {
+//        return
+//      }
       
       if self.shownViewController != nil {
         self.shownViewController?.dismissViewControllerAnimated(true, completion: { self.setup(user!) })
-      } else {
-        self.setup(user!)
       }
+      
+      self.setup(user!)
     }
   }
   
   func stop() {
     if AppDelegate.deviceModelManager != nil {
       AppDelegate.deviceModelManager!.stopWatching()
-      AppDelegate.deviceModelManager = nil
     }
     
     self.databaseManager.stopWatching()
@@ -210,8 +209,11 @@ class SceneTableViewController: UITableViewController,
   func setup(user: FIRUser) {
     // Start the Device watcher on the AppDelegate
     // TODO: We might be able to make this a singleton class instead of having it live on the AppDelegate.
-    AppDelegate.deviceModelManager = ApiManager<DeviceModel>()
-    AppDelegate.deviceModelManager!.delegate = self
+    if AppDelegate.deviceModelManager == nil {
+      AppDelegate.deviceModelManager = ApiManager<DeviceModel>()
+      AppDelegate.deviceModelManager!.delegate = self
+    }
+    
     AppDelegate.deviceModelManager!.startWatching()
     
     // Start looking for devices on the local network
@@ -220,17 +222,29 @@ class SceneTableViewController: UITableViewController,
     // Start Scene watcher
     self.databaseManager.delegate = self;
     self.databaseManager.startWatching()
-    
-    // This creates a default scene if one doesn't exist.
-    // TODO: I don't like this, lets look at removing it.
-    let manager = ApiManager<SceneModel>()
-    manager.exists("All Switches", callback: { (exists) in
-      // TODO: Create default scene.
-      if (!exists) {
-        let scene = SceneModel(withName: "All Switches")
-        
-        manager.save(scene)
-      }
-    })
+  }
+  
+  @IBAction func addButtonTapped(sender: AnyObject) {
+    if FIRAuth.auth()!.currentUser!.anonymous {
+      let alert = UIAlertController(title: "Create Account", message: "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nWould you like to create an account now?", preferredStyle: .Alert)
+      
+      alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+      
+      alert.addAction(UIAlertAction(title: "Create", style: .Default, handler: {
+        [unowned self]
+        (action) in
+        FIRAuth.auth()!.currentUser?.deleteWithCompletion({ (error) in
+          if error != nil {
+            print(error?.localizedDescription)
+          } else {
+            self.performSegueWithIdentifier("signinSegue", sender: nil)
+          }
+        })
+      }))
+      
+      self.presentViewController(alert, animated: true, completion: nil)
+    } else {
+      performSegueWithIdentifier("newSceneSegue", sender: self)
+    }
   }
 }

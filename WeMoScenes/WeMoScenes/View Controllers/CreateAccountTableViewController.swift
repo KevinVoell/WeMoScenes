@@ -32,7 +32,11 @@ class CreateAccountTableViewController: UITableViewController {
         // Link account
         let credential = FIREmailPasswordAuthProvider.credentialWithEmail(emailTextField.text!, password: passwordTextField.text!)
         
-        FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: handleAccountCreation)
+        FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: { (user, error) in
+          self.handleAccountCreation(user, error: error)
+          self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
       } else {
         // Create account
         FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: self.handleAccountCreation)
@@ -51,13 +55,7 @@ class CreateAccountTableViewController: UITableViewController {
         self.confirmPasswordTextfield.text = ""
       })
     } else {
-      user?.sendEmailVerificationWithCompletion({ (error) in
-        if error != nil {
-          self.showAlert("Error", message: error!.localizedDescription)
-        } else {
-          self.showAlert("Confirm Email", message: "Check your email to confirm your account.")
-        }
-      })
+
     }
   }
   

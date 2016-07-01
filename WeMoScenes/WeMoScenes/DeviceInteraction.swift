@@ -37,14 +37,13 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   private init() {
     print("Called init on DeviceInteraction")
   
-    WeMoMulticastHandler.sharedInstance.delegate = self
     self.databaseReference = FIRDatabase.database().reference()    
   }
   
   deinit {
     print("Called deinit on DeviceInteraction")
     
-    WeMoMulticastHandler.sharedInstance.stop()
+    WeMoMulticastHandler.sharedInstance.close()
   }
   
   /**
@@ -137,8 +136,9 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   internal func findDevices() -> Array<DeviceModel> {
     let devices = Array<DeviceModel>()
     
-    WeMoMulticastHandler.sharedInstance.stop()
-    WeMoMulticastHandler.sharedInstance.start()
+    //WeMoMulticastHandler.sharedInstance.close()()
+    WeMoMulticastHandler.sharedInstance.delegate = self
+    WeMoMulticastHandler.sharedInstance.findDevices()
     
     return devices
   }
