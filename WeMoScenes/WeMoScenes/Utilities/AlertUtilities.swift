@@ -9,12 +9,25 @@
 import UIKit
 
 internal class AlertUtilities {
-  internal static func ShowALert(title: String, message: String, viewController: UIViewController) {
+  /**
+    Show an alert on the specified UIViewController.
+  */
+  internal static func ShowALert(title: String, 
+                               message: String, 
+                               viewController: UIViewController
+                               dismissButtonTitle: String
+                               additionalButtonTitle: String?
+                               additionalButtonCompletionHandler: ((Void) -> Void)?) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     
-    alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
+    // Add the dismiss button by default
+    alert.addAction(UIAlertAction(title: dismissButtonTitle, style: .Cancel, handler: nil))
     
-     viewController.presentViewController(alert, animated: true, completion: {
-    })
+    if additionalButtonTitle != nil {
+      // Add additional button
+      alert.addAction(UIAlertAction(title: additionalButtonTitle, style: .Default, handler: additionalButtonCompletionHandler))
+    }
+    
+     viewController.presentViewController(alert, animated: true, completion: nil)
   }
 }
