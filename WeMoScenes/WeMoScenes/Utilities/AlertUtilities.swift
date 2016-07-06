@@ -15,6 +15,7 @@ extension UIViewController {
   func ShowAlert(title: String, 
                                message: String, 
                                dismissButtonTitle: String
+                               completionHandler: ((Void) -> Void)?)
                                additionalButtonTitle: String?
                                additionalButtonCompletionHandler: ((Void) -> Void)?) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -27,6 +28,6 @@ extension UIViewController {
       alert.addAction(UIAlertAction(title: additionalButtonTitle, style: .Default, handler: additionalButtonCompletionHandler))
     }
     
-     self.presentViewController(alert, animated: true, completion: nil)
+     self.presentViewController(alert, animated: true, completion: completionHandler)
   }
 }
