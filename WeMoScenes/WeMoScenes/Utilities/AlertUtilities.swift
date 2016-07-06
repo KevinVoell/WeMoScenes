@@ -12,7 +12,7 @@ extension UIViewController {
   /**
     Show an alert on the specified UIViewController.
   */
-  func ShowALert(title: String, 
+  func ShowAlert(title: String, 
                                message: String, 
                                dismissButtonTitle: String
                                additionalButtonTitle: String?
