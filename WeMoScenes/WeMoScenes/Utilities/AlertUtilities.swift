@@ -8,11 +8,11 @@
 
 import UIKit
 
-internal class AlertUtilities {
+extension UIViewController {
   /**
     Show an alert on the specified UIViewController.
   */
-  internal static func ShowALert(title: String, 
+  func ShowALert(title: String, 
                                message: String, 
                                viewController: UIViewController
                                dismissButtonTitle: String
