@@ -27,15 +27,12 @@ class SigninTableViewController: UITableViewController {
   
   @IBAction func signinButtonTapped(sender: AnyObject) {
     if emailTextField.text == "" || passwordTextField.text == "" {
-      let alert = UIAlertController(title: "Error", message: "Please enter your email address and password.", preferredStyle: .Alert)
-      
-      alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-      
-      self.presentViewController(alert, animated: true, completion: {
-        self.passwordTextField.text = ""
-      })
+      self.showAlert(title: "Error", 
+                   message: "Please enter your email address and password.",
+              dismissTitle: "Dismiss",
+         completionHandler: { () in self.passwordTextField.text = "" })
     } else {
-      
+      // If we're converting from an anonymous account, save off the anonymous user
       var anonymousUser: FIRUser? = nil
       var anonymousSceneManager: ApiManager<SceneModel>?
       
@@ -51,6 +48,12 @@ class SigninTableViewController: UITableViewController {
       
       FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
         if error != nil {
+          self.showAlert(title: "Error",
+                       message: error?.localizedDescription,
+             completionHandler: { () in self.passwordTextField.text = "" },
+                  dismissTitle: "Dismiss")
+          /*
+          // TODO: Delete
           let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
           
           alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
@@ -58,15 +61,17 @@ class SigninTableViewController: UITableViewController {
           self.presentViewController(alert, animated: true, completion: {
             self.passwordTextField.text = ""
           })
+          */
         } else {
-          // Merge account
           if anonymousUser != nil {
             //Save any existing scenes under the new user
             let newSceneManager = ApiManager<SceneModel>()
             for scene in anonymousSceneManager!.items {
+              // TODO: Check for "All switches"
               newSceneManager.save(scene)
             }
             
+            // Delete the anonymous users account
             anonymousUser?.deleteWithCompletion(nil)
           }
           
@@ -81,6 +86,20 @@ class SigninTableViewController: UITableViewController {
     - parameter sender: The button that was tapped
   */
   @IBAction func signinAnonymouslyTapped(sender: AnyObject) {
+    self.showAlert(title: "Confirm", 
+                 message: "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nContinue without creating an account?",
+            dismissTitle: "Cancel",
+   additionalButtonTitle: "Continue",
+ additionalButtonHandler: { () in       
+              FIRAuth.auth()!.signInAnonymouslyWithCompletion({ (user, error) in
+              let manager = ApiManager<SceneModel>()
+              let scene = SceneModel(withName: "All Switches")
+              manager.save(scene)
+              })
+            })
+          }
+    /*
+    // TODO: Delete
     let alert = UIAlertController(title: "Confirm", message: "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nContinue without creating an account?", preferredStyle: .Alert)
 
     alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
@@ -95,5 +114,6 @@ class SigninTableViewController: UITableViewController {
     )
 
     self.presentViewController(alert, animated: true, completion: nil)
+    */
   }
 }
