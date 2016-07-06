@@ -40,6 +40,8 @@
 		E96B4A621D0D075300F41579 /* ManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A611D0D075300F41579 /* ManagerDelegate.swift */; };
 		E96B4A651D0E502D00F41579 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A641D0E502D00F41579 /* SwitchTableViewCell.swift */; };
 		E96B4A691D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */; };
+		E98501BE1D26FDAA009DCAE7 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */; };
+		E98501C11D2C8B0C009DCAE7 /* AlertUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */; };
 		EE3178FA16A460F99DAFD5DD /* Pods_WeMoScenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,8 @@
 		E96B4A611D0D075300F41579 /* ManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagerDelegate.swift; path = Models/Managers/ManagerDelegate.swift; sourceTree = "<group>"; };
 		E96B4A641D0E502D00F41579 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchTableViewCell.swift; path = Cells/SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchTableViewCellDelegate.swift; path = Protocols/SwitchTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertUtilities.swift; path = Utilities/AlertUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 		E950D96E1D0270C5003DD7EE /* WeMoScenes */ = {
 			isa = PBXGroup;
 			children = (
+				E98501BF1D2C8A43009DCAE7 /* Utilities */,
 				E96B4A631D0E4FEE00F41579 /* Cells */,
 				E96B4A4E1D0C2E7700F41579 /* Protocols */,
 				E96B4A451D0C2E3400F41579 /* Interaction */,
@@ -215,6 +220,7 @@
 				E950D97E1D0270C5003DD7EE /* Info.plist */,
 				E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */,
 				E96B4A5C1D0D011900F41579 /* GoogleService-Info.plist */,
+				E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */,
 			);
 			path = WeMoScenes;
 			sourceTree = "<group>";
@@ -317,6 +323,14 @@
 				E95165491D1A124000D68504 /* SceneTableViewCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		E98501BF1D2C8A43009DCAE7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E950D97D1D0270C5003DD7EE /* LaunchScreen.storyboard in Resources */,
+				E98501BE1D26FDAA009DCAE7 /* iTunesArtwork@2x.png in Resources */,
 				E96B4A5D1D0D011900F41579 /* GoogleService-Info.plist in Resources */,
 				E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */,
 				E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */,
@@ -524,6 +539,7 @@
 				E96B4A621D0D075300F41579 /* ManagerDelegate.swift in Sources */,
 				E951654C1D1AB3A400D68504 /* Array+Find.swift in Sources */,
 				E96B4A601D0D062800F41579 /* ApiManager.swift in Sources */,
+				E98501C11D2C8B0C009DCAE7 /* AlertUtilities.swift in Sources */,
 				E96B4A471D0C2E4300F41579 /* DeviceInteraction.swift in Sources */,
 				E95165541D1E065600D68504 /* CreateAccountTableViewController.swift in Sources */,
 				E96B4A541D0C2E8900F41579 /* InteractionDelegate.swift in Sources */,

@@ -34,6 +34,7 @@ class CreateAccountTableViewController: UITableViewController {
         
         FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: { (user, error) in
           self.handleAccountCreation(user, error: error)
+                    
           self.dismissViewControllerAnimated(true, completion: nil)
         })
         

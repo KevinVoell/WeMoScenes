@@ -25,7 +25,7 @@ class SettingsTableViewController: UITableViewController {
       if user.anonymous {
         usernameTextField.text = "Anonymous"
         
-        //signoutButton.setTitle("Create Account", forState: .Normal)
+        signoutButton.setTitle("Signin", forState: .Normal)
       } else {
         usernameTextField.text = user.email
       }
@@ -35,11 +35,8 @@ class SettingsTableViewController: UITableViewController {
   @IBAction func signoutTapped(sender: AnyObject) {
     if let user = FIRAuth.auth()?.currentUser {
       if user.anonymous {
-        do {
-          try FIRAuth.auth()!.currentUser?.deleteWithCompletion(nil)
-        } catch let signOutError as NSError {
-          print(signOutError)
-        }
+        //FIRAuth.auth()!.currentUser?.deleteWithCompletion(nil)
+        self.performSegueWithIdentifier("createAccountSegue", sender: self)
       } else {
         do {
           try FIRAuth.auth()!.signOut()

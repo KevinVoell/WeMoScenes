@@ -159,13 +159,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeMoScenes/WeMoScenes/View Controllers/SceneTableViewController.swift"
-            timestampString = "489085779.119659"
+            filePath = "WeMoScenes/WeMoScenes/View Controllers/SigninTableViewController.swift"
+            timestampString = "489499695.619513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "prepareForSegue(_:sender:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "signinButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -175,13 +175,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeMoScenes/WeMoScenes/View Controllers/SceneTableViewController.swift"
-            timestampString = "489085783.420981"
+            filePath = "WeMoScenes/WeMoScenes/View Controllers/SigninTableViewController.swift"
+            timestampString = "489499700.09408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "handleAuthChange(_:user:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "signinButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

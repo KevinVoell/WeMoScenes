@@ -136,8 +136,11 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   internal func findDevices() -> Array<DeviceModel> {
     let devices = Array<DeviceModel>()
     
+    if WeMoMulticastHandler.sharedInstance.delegate == nil {
+      WeMoMulticastHandler.sharedInstance.delegate = self
+    }
+    
     //WeMoMulticastHandler.sharedInstance.close()()
-    WeMoMulticastHandler.sharedInstance.delegate = self
     WeMoMulticastHandler.sharedInstance.findDevices()
     
     return devices

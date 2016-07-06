@@ -35,6 +35,20 @@ class SigninTableViewController: UITableViewController {
         self.passwordTextField.text = ""
       })
     } else {
+      
+      var anonymousUser: FIRUser? = nil
+      var anonymousSceneManager: ApiManager<SceneModel>?
+      
+      if let user = FIRAuth.auth()?.currentUser {
+        if user.anonymous {
+          anonymousUser = user
+          
+          // Get any existing scenes the user may have created
+          anonymousSceneManager = ApiManager<SceneModel>()
+          anonymousSceneManager!.startWatching()
+        }
+      }
+      
       FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
         if error != nil {
           let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
@@ -45,7 +59,18 @@ class SigninTableViewController: UITableViewController {
             self.passwordTextField.text = ""
           })
         } else {
-        
+          // Merge account
+          if anonymousUser != nil {
+            //Save any existing scenes under the new user
+            let newSceneManager = ApiManager<SceneModel>()
+            for scene in anonymousSceneManager!.items {
+              newSceneManager.save(scene)
+            }
+            
+            anonymousUser?.deleteWithCompletion(nil)
+          }
+          
+          self.dismissViewControllerAnimated(true, completion: nil)
         }
       })
     }

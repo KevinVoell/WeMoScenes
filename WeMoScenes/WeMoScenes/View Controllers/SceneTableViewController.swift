@@ -225,6 +225,7 @@ class SceneTableViewController: UITableViewController,
   }
   
   @IBAction func addButtonTapped(sender: AnyObject) {
+    /*
     if FIRAuth.auth()!.currentUser!.anonymous {
       let alert = UIAlertController(title: "Create Account", message: "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nWould you like to create an account now?", preferredStyle: .Alert)
       
@@ -244,7 +245,8 @@ class SceneTableViewController: UITableViewController,
       
       self.presentViewController(alert, animated: true, completion: nil)
     } else {
+    */
       performSegueWithIdentifier("newSceneSegue", sender: self)
-    }
+   // }
   }
 }

@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    * manager: Data manager for the device table.
    */
   internal static var deviceModelManager: ApiManager<DeviceModel>?
+  
+  private var connectionsRunning: Bool! = false
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
-    
-    Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatSkyBlueColor(), withContentStyle: UIContentStyle.Contrast)
-    
-    UIApplication.sharedApplication().statusBarStyle = .LightContent
-    
+
+    Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatSkyBlueColor(), withContentStyle: UIContentStyle.Light)
+
     // Configure FireBase
     FIRApp.configure()
     FIRAuth.auth()?.addAuthStateDidChangeListener(self.handleAuthChange)
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillEnterForeground(application: UIApplication) {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    resumeNetworkConnections()
+    //resumeNetworkConnections()
   }
 
   func applicationDidBecomeActive(application: UIApplication) {
@@ -72,9 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func resumeNetworkConnections() {
-    print("Starting network connections")
-    WeMoMulticastHandler.sharedInstance.findDevices()
-    NSNotificationCenter.defaultCenter().postNotificationName("startListeners", object: nil)
+    if !self.connectionsRunning {
+      self.connectionsRunning = true
+      
+      print("Starting network connections")
+      //WeMoMulticastHandler.sharedInstance.findDevices()
+      NSNotificationCenter.defaultCenter().postNotificationName("startListeners", object: nil)
+    }
   }
   
   func closeNetworkConnections() {
@@ -84,6 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // TODO: Shutdown other connections
     NSNotificationCenter.defaultCenter().postNotificationName("shutdownListeners", object: nil)
+    
+    self.connectionsRunning = false
   }
 
 }
