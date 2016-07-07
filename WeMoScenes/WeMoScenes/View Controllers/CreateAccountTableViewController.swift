@@ -16,17 +16,22 @@ class CreateAccountTableViewController: UITableViewController {
   @IBOutlet weak var confirmPasswordTextfield: UITextField!
   
   @IBAction func createAccountTapped(sender: AnyObject) {
-    if emailTextField.text! == "" {
-      self.showAlert("Error", message: "Please enter an Email Address")
+    if emailTextField.text!.isEmpty {
+      self.showAlert("Error",
+                     message: "Please enter an Email Address",
+                     dismissButtonTitle: "Dismiss",
+                     completionHandler: nil,
+                     additionalButtons: nil)
     } else if passwordTextField.text! != confirmPasswordTextfield.text! {
-      let alert = UIAlertController(title: "Error", message: "Passwords must match, please try again.", preferredStyle: .Alert)
-      
-      alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-      
-      self.presentViewController(alert, animated: true, completion: { 
-        self.passwordTextField.text = ""
-        self.confirmPasswordTextfield.text = ""
-      })
+      self.showAlert("Error",
+                     message: "Passwords must match, please try again.",
+          dismissButtonTitle: "Dismiss",
+           completionHandler: {
+                        [unowned self] in
+                        self.passwordTextField.text = ""
+                        self.confirmPasswordTextfield.text = ""
+                      },
+           additionalButtons: nil)
     } else {
       if FIRAuth.auth()?.currentUser != nil && (FIRAuth.auth()?.currentUser!.anonymous)! {
         // Link account
@@ -47,25 +52,15 @@ class CreateAccountTableViewController: UITableViewController {
   
   func handleAccountCreation(user: FIRUser?, error: NSError?) {
     if error != nil {
-      let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
-      
-      alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-      
-      self.presentViewController(alert, animated: true, completion: {
-        self.passwordTextField.text = ""
-        self.confirmPasswordTextfield.text = ""
-      })
-    } else {
-
+      self.showAlert("Error",
+                     message: error!.localizedDescription,
+          dismissButtonTitle: "Dismiss",
+           completionHandler: {
+                                [unowned self] in
+                                self.passwordTextField.text = ""
+                                self.confirmPasswordTextfield.text = ""
+                               },
+           additionalButtons: nil)
     }
   }
-  
-  func showAlert(title: String, message: String) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-    
-    alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-    
-    self.presentViewController(alert, animated: true, completion: nil)
-  }
-  
 }

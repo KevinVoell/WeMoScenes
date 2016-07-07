@@ -8,26 +8,27 @@
 
 import UIKit
 
-extension UIViewController {
+internal extension UIViewController {
+  
   /**
     Show an alert on the specified UIViewController.
   */
-  func ShowAlert(title: String, 
-                               message: String, 
-                               dismissButtonTitle: String
-                               completionHandler: ((Void) -> Void)?)
-                               additionalButtonTitle: String?
-                               additionalButtonCompletionHandler: ((Void) -> Void)?) {
+  internal func showAlert(title: String,
+                        message: String,
+             dismissButtonTitle: String,
+              completionHandler: ((Void) -> Void)?,
+              additionalButtons: Array<(title: String, handler: (UIAlertAction) -> Void)>?){
     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     
     // Add the dismiss button by default
     alert.addAction(UIAlertAction(title: dismissButtonTitle, style: .Cancel, handler: nil))
     
-    if additionalButtonTitle != nil {
-      // Add additional button
-      alert.addAction(UIAlertAction(title: additionalButtonTitle, style: .Default, handler: additionalButtonCompletionHandler))
+    if additionalButtons != nil {
+      for additionalButton in additionalButtons! {
+        alert.addAction(UIAlertAction(title: additionalButton.title, style: .Default, handler: additionalButton.handler))
+      }
     }
-    
-     self.presentViewController(alert, animated: true, completion: completionHandler)
+
+    self.presentViewController(alert, animated: true, completion: completionHandler)
   }
 }

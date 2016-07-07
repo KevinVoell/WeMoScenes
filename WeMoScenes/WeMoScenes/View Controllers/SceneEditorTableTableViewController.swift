@@ -57,9 +57,17 @@ class SceneEditorTableTableViewController:
   }
   
   @IBAction func saveButtonTapped(sender: AnyObject) {
-    self.currentModel?.name = titleTextFIeld.text
-    self.sceneManager.save(self.currentModel!)
-    self.dismissViewControllerAnimated(true, completion: nil)
+    if titleTextFIeld.text == "" {
+      self.showAlert("Error",
+                     message: "Please enter a title.",
+          dismissButtonTitle: "Dismiss",
+           completionHandler: nil,
+           additionalButtons: nil)
+    } else {
+      self.currentModel?.name = titleTextFIeld.text
+      self.sceneManager.save(self.currentModel!)
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
   }
   
   override func didReceiveMemoryWarning() {

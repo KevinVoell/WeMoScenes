@@ -14,13 +14,11 @@ class ForgotPasswordTableViewController: UITableViewController {
 
   @IBAction func resetPasswordTapped(sender: AnyObject) {
     if emailAddressTextField.text == "" {
-      let alert = UIAlertController(title: "Error", message: "Please enter your email address.", preferredStyle: .Alert)
-      
-      alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-      
-      self.presentViewController(alert, animated: true, completion: {
-        
-      })
+      self.showAlert("Error",
+                     message: "Please enter your email address.",
+                     dismissButtonTitle: "Dismiss",
+                     completionHandler: nil,
+                     additionalButtons: nil)
     } else {
       FIRAuth.auth()?.sendPasswordResetWithEmail(emailAddressTextField.text!, completion: { (error) in
         if error != nil {

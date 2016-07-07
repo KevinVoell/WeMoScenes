@@ -1,0 +1,14 @@
+/* 
+  Strings.strings
+  WeMoScenes
+
+  Created by Kevin Voell on 7/6/16.
+  Copyright © 2016 Kevin Voell. All rights reserved.
+*/
+
+"ConfirmTitle" = "Confirm";
+"AnonymousAccountMessage" = "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nContinue without creating an account?";
+
+"CancelTitle" = "Cancel";
+
+"ContinueTitle" = "Continue";

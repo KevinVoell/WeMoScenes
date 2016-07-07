@@ -42,6 +42,7 @@
 		E96B4A691D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */; };
 		E98501BE1D26FDAA009DCAE7 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */; };
 		E98501C11D2C8B0C009DCAE7 /* AlertUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */; };
+		E98501C41D2DF857009DCAE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E98501C31D2DF857009DCAE7 /* Localizable.strings */; };
 		EE3178FA16A460F99DAFD5DD /* Pods_WeMoScenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		E96B4A681D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchTableViewCellDelegate.swift; path = Protocols/SwitchTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertUtilities.swift; path = Utilities/AlertUtilities.swift; sourceTree = "<group>"; };
+		E98501C31D2DF857009DCAE7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Localization/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		E950D96E1D0270C5003DD7EE /* WeMoScenes */ = {
 			isa = PBXGroup;
 			children = (
+				E98501C21D2DF78C009DCAE7 /* Localization */,
 				E98501BF1D2C8A43009DCAE7 /* Utilities */,
 				E96B4A631D0E4FEE00F41579 /* Cells */,
 				E96B4A4E1D0C2E7700F41579 /* Protocols */,
@@ -333,6 +336,14 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		E98501C21D2DF78C009DCAE7 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E98501C31D2DF857009DCAE7 /* Localizable.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,6 +410,9 @@
 		E950D9641D0270C5003DD7EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Kevin Voell";
@@ -447,6 +461,7 @@
 				E96B4A5D1D0D011900F41579 /* GoogleService-Info.plist in Resources */,
 				E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */,
 				E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */,
+				E98501C41D2DF857009DCAE7 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

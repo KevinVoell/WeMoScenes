@@ -160,27 +160,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeMoScenes/WeMoScenes/View Controllers/SigninTableViewController.swift"
-            timestampString = "489499695.619513"
+            timestampString = "489553783.093237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "signinButtonTapped(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeMoScenes/WeMoScenes/View Controllers/SigninTableViewController.swift"
-            timestampString = "489499700.09408"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "signinButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
