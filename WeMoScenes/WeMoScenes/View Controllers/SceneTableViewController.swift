@@ -48,10 +48,10 @@ class SceneTableViewController: UITableViewController,
   
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == 0 {
-      return "Scenes"
-    } else {
-      return "Switches"
-    }
+      return NSLocalizedString("ScenesTableViewSectionTitle", comment: "Section title for the scenes section")
+    } 
+    
+		return NSLocalizedString("SwitchesTableViewSectionTitle", comment: "Section title for the scenes section")
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -77,23 +77,23 @@ class SceneTableViewController: UITableViewController,
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 0 {
       return self.databaseManager.items.count
-    } else {
-      if AppDelegate.deviceModelManager != nil {
-        return AppDelegate.deviceModelManager!.items.count
-      }
-    }
+    } 
+
+		if AppDelegate.deviceModelManager != nil {
+			return AppDelegate.deviceModelManager!.items.count
+		}
     
     return 0
   }
   
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    return true
+    return true // All cells can be edited
   }
   
-  
-  
   override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+    let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Delete" , handler: { 
+		(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void 
+		[unowned self] in
       if indexPath.section == 0 {
         let item = self.databaseManager.items[indexPath.row]
         self.databaseManager.delete(item)
@@ -106,12 +106,15 @@ class SceneTableViewController: UITableViewController,
     deleteAction.backgroundColor = UIColor.redColor()
     
     if indexPath.section == 0 {
-      let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-
-        let item = self.databaseManager.items[indexPath.row]
-        self.performSegueWithIdentifier("editSceneSegue", sender: item)
-        
-      })
+      let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, 
+											title: "Edit" , 
+										  handler: { 
+												(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void 
+														[unowned self] in
+					
+														let item = self.databaseManager.items[indexPath.row]
+														self.performSegueWithIdentifier("editSceneSegue", sender: item)        
+													})
       
       return [deleteAction, editAction]
     }
@@ -122,9 +125,11 @@ class SceneTableViewController: UITableViewController,
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segue.identifier! {
     case "newSceneSegue":
-      let destinationViewController = segue.destinationViewController as! UINavigationController
-      let destination = destinationViewController.viewControllers[0] as! SceneEditorTableTableViewController
-      destination.sceneManager = self.databaseManager
+      if let destinationViewController = segue.destinationViewController as! UINavigationController {
+				if let destination = destinationViewController.viewControllers[0] as! SceneEditorTableTableViewController {}
+					destination.sceneManager = self.databaseManager
+				}
+			}
     
     case "editSceneSegue":
       if let destinationViewController = segue.destinationViewController as? UINavigationController {
@@ -162,12 +167,12 @@ class SceneTableViewController: UITableViewController,
   */
   func handleAuthChange(auth: FIRAuth?, user : FIRUser?) {
     if user == nil {
-      // TODO: Shutdown services
       self.stop()
       
       if self.settingsVC != nil {
-        self.settingsVC!.dismissViewControllerAnimated(true, completion: { 
-          self.performSegueWithIdentifier("signinSegue", sender: nil)
+        self.settingsVC!.dismissViewControllerAnimated(true, completion: {
+					[unowned self] in
+					self.performSegueWithIdentifier("signinSegue", sender: nil)
         })
       } else {
         self.performSegueWithIdentifier("signinSegue", sender: nil)
@@ -181,6 +186,9 @@ class SceneTableViewController: UITableViewController,
     }
   }
   
+	/**
+		Stops watching for changes in the data model.
+	*/
   func stop() {
     if AppDelegate.deviceModelManager != nil {
       AppDelegate.deviceModelManager!.stopWatching()
@@ -194,7 +202,6 @@ class SceneTableViewController: UITableViewController,
   */
   func setup(user: FIRUser) {
     // Start the Device watcher on the AppDelegate
-    // TODO: We might be able to make this a singleton class instead of having it live on the AppDelegate.
     if AppDelegate.deviceModelManager == nil {
       AppDelegate.deviceModelManager = ApiManager<DeviceModel>()
       AppDelegate.deviceModelManager!.delegate = self
@@ -210,6 +217,9 @@ class SceneTableViewController: UITableViewController,
     self.databaseManager.startWatching()
   }
   
+	/**
+		Called when the add button is tapped.
+	*/
   @IBAction func addButtonTapped(sender: AnyObject) {
     performSegueWithIdentifier("newSceneSegue", sender: self)
   }

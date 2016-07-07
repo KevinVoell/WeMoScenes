@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class SettingsTableViewController: UITableViewController {
+// TODO: Delete this from IB
   @IBOutlet weak var signoutButtonCell: UITableViewCell!
   @IBOutlet weak var usernameTextField: UILabel!
   @IBOutlet weak var signoutButton: UIButton!
@@ -23,8 +24,8 @@ class SettingsTableViewController: UITableViewController {
     
     if let user = FIRAuth.auth()?.currentUser {
       if user.anonymous {
-        usernameTextField.text = "Anonymous"
-        signoutButton.setTitle("Signin", forState: .Normal)
+        usernameTextField.text = NSLocalizedString("AnonymousUserTitle", comment: "Title for an anonymous user")
+        signoutButton.setTitle(NSLocalizedString("SigninButtonTitle", comment: "Title for the signin button"), forState: .Normal)
       } else {
         usernameTextField.text = user.email
       }

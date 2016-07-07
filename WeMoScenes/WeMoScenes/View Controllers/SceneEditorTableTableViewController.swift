@@ -42,11 +42,11 @@ class SceneEditorTableTableViewController:
     if self.currentModel == nil {
       self.isNew = true;
       self.navigationController!.toolbarHidden = true
-      self.navigationItem.title = "New Scene"
+      self.navigationItem.title = NSLocalizedString("NewSceneNavigationBarTitle", comment: "Title for the new scene view")
       
       self.currentModel = SceneModel(withName: "")
     } else {
-      self.navigationItem.title = "Edit Scene"
+      self.navigationItem.title = NSLocalizedString("EditSceneNavigationBarTitle", comment: "Title for the edit scene view")
     }
     
     titleTextFIeld.text = self.currentModel!.name
@@ -58,9 +58,9 @@ class SceneEditorTableTableViewController:
   
   @IBAction func saveButtonTapped(sender: AnyObject) {
     if titleTextFIeld.text == "" {
-      self.showAlert("Error",
-                     message: "Please enter a title.",
-          dismissButtonTitle: "Dismiss",
+      self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
+                     message: NSLocalizedString("SceneTitleMissingMessage", comment: "Message shown when trying to save scene with no title"),
+          dismissButtonTitle: NSLocalizedString("DismissButtonTitle", comment: "Title for the dismiss button"),
            completionHandler: nil,
            additionalButtons: nil)
     } else {

@@ -14,6 +14,7 @@ class SigninTableViewController: UITableViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var signinButton: UIButton!
+// TODO: Reference not used, removed from IB
   @IBOutlet weak var createAccountButton: UIButton!
   @IBOutlet weak var anonymousButtonCell: UITableViewCell!
   
@@ -27,10 +28,13 @@ class SigninTableViewController: UITableViewController {
   
   @IBAction func signinButtonTapped(sender: AnyObject) {
     if emailTextField.text == "" || passwordTextField.text == "" {
-      self.showAlert("Error",
-                     message: "Please enter your email address and password.",
-          dismissButtonTitle: "Dismiss",
-           completionHandler: { () in self.passwordTextField.text = "" },
+      self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
+                     message: NSLocalizedString("EmailPasswordMissingMessage", comment: "Message when the email and password are missing"),
+          dismissButtonTitle: NSLocalizedString("DismissButtonTitle", comment: "Title for the dismiss button"),
+           completionHandler: { 
+																[unowned self] in 
+																self.passwordTextField.text = "" 
+															},
            additionalButtons: nil)
     } else {
       // If we're converting from an anonymous account, save off the anonymous user
@@ -47,12 +51,16 @@ class SigninTableViewController: UITableViewController {
         }
       }
       
-      FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+      FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { 
+			(user, error) [unowned self] in
         if error != nil {
-          self.showAlert("Error",
+          self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
                        message: error!.localizedDescription,
-            dismissButtonTitle: "Dismiss",
-             completionHandler: { () in self.passwordTextField.text = "" },
+            dismissButtonTitle: NSLocalizedString("DismissButtonTitle", comment: "Title for the dismiss button")
+             completionHandler: { 
+																	[unowned self] in 
+																	self.passwordTextField.text = "" 
+																},
              additionalButtons: nil)
         } else {
           if anonymousUser != nil {
@@ -79,15 +87,17 @@ class SigninTableViewController: UITableViewController {
   */
   @IBAction func signinAnonymouslyTapped(sender: AnyObject) {
     self.showAlert(NSLocalizedString("ConfirmTitle", comment: "Confirm"),
-                 message: NSLocalizedString("AnonymousAccountMessage", comment: "Shows when creating new account"),
-            dismissButtonTitle: NSLocalizedString("CancelTitle", comment: "Cancel title"),
-            completionHandler: nil,
-            additionalButtons: [(title: NSLocalizedString("ContinueTitle", comment: "Continue title"), handler: { (UIAlertAction) in
-              FIRAuth.auth()!.signInAnonymouslyWithCompletion({ (user, error) in
-                let manager = ApiManager<SceneModel>()
-                let scene = SceneModel(withName: "All Switches")
-                manager.save(scene)
-              })
+												message: NSLocalizedString("AnonymousAccountMessage", comment: "Shows when creating new account"),
+						 dismissButtonTitle: NSLocalizedString("CancelTitle", comment: "Cancel title"),
+							completionHandler: nil,
+							additionalButtons: [(title: NSLocalizedString("ContinueTitle", comment: "Continue title"), handler: { 
+							(UIAlertAction) in
+								FIRAuth.auth()!.signInAnonymouslyWithCompletion({ 
+								(user, error) in
+									let manager = ApiManager<SceneModel>()
+									let scene = SceneModel(withName: NSLocalizedString("AllSwitchesSceneTitle", comment: "Title for the default scene 'All Switches'"))
+									manager.save(scene)
+								})
             })
       ])
   }

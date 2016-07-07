@@ -7,8 +7,39 @@
 */
 
 "ConfirmTitle" = "Confirm";
+
 "AnonymousAccountMessage" = "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nContinue without creating an account?";
 
 "CancelTitle" = "Cancel";
 
 "ContinueTitle" = "Continue";
+
+"ErrorTitle" = "Error";
+
+"SuccessTitle" = "Success";
+
+"EmailErrorMessage" = "Please enter an Email Address.";
+
+"PasswordMismatchErrorMessage" = "Passwords must match, please try again.";
+
+"DismissButtonTitle" = "Dismiss";
+
+"PasswordResetSuccessMessage" = "Password reset email has been sent.";
+
+"NewSceneNavigationBarTitle" = "New Scene";
+
+"EditSceneNavigationBarTitle" = "Edit Scene";
+
+"SceneTitleMissingMessage" = "Please enter a title.";
+
+"ScenesTableViewSectionTitle" = "Scenes";
+
+"SwitchesTableViewSectionTitle" = "Switches";
+
+"AnonymousUserTitle" = "Anonymous";
+
+"SigninButtonTitle" = "Signin";
+
+"EmailPasswordMissingMessage" = "Please enter your email address and password.";
+
+"AllSwitchesSceneTitle" = "All Switches";

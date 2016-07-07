@@ -17,35 +17,38 @@ class CreateAccountTableViewController: UITableViewController {
   
   @IBAction func createAccountTapped(sender: AnyObject) {
     if emailTextField.text!.isEmpty {
-      self.showAlert("Error",
-                     message: "Please enter an Email Address",
-                     dismissButtonTitle: "Dismiss",
+      self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
+                     message: NSLocalizedString("EmailErrorMessage", comment: "Error message when email address is missing"),
+                     dismissButtonTitle: NSLocalizedString("DimissTitle", comment: "Title for the dismiss button"),
                      completionHandler: nil,
                      additionalButtons: nil)
     } else if passwordTextField.text! != confirmPasswordTextfield.text! {
-      self.showAlert("Error",
-                     message: "Passwords must match, please try again.",
-          dismissButtonTitle: "Dismiss",
+      self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
+                     message: NSLocalizedString("PasswordMismatchErrorMessage", comment: "Error message when passwords don't match")
+          dismissButtonTitle: NSLocalizedString("DimissTitle", comment: "Title for the dismiss button"),
            completionHandler: {
-                        [unowned self] in
-                        self.passwordTextField.text = ""
-                        self.confirmPasswordTextfield.text = ""
-                      },
+								[unowned self] in
+								self.passwordTextField.text = ""
+								self.confirmPasswordTextfield.text = ""
+							  },
            additionalButtons: nil)
     } else {
       if FIRAuth.auth()?.currentUser != nil && (FIRAuth.auth()?.currentUser!.anonymous)! {
         // Link account
         let credential = FIREmailPasswordAuthProvider.credentialWithEmail(emailTextField.text!, password: passwordTextField.text!)
         
-        FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: { (user, error) in
-          self.handleAccountCreation(user, error: error)
-                    
+        FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: { 
+					(user, error) 
+					[unowned self] in
+          self.handleAccountCreation(user, error: error)      
           self.dismissViewControllerAnimated(true, completion: nil)
         })
         
       } else {
         // Create account
-        FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: self.handleAccountCreation)
+        FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, 
+											password: passwordTextField.text!, 
+										  completion: self.handleAccountCreation)
       }
     }
   }
