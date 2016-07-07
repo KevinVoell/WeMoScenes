@@ -22,19 +22,19 @@ class ForgotPasswordTableViewController: UITableViewController {
     } else {
       FIRAuth.auth()?.sendPasswordResetWithEmail(emailAddressTextField.text!, completion: { (error) in
         if error != nil {
-          let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
-          
-          alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-          
-          self.presentViewController(alert, animated: true, completion: {
-            self.dismissViewControllerAnimated(true, completion: nil)
-          })
+          self.showAlert("Error",
+                        message: error!.localizedDescription,
+             dismissButtonTitle: "Dismiss",
+              completionHandler: {
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                  },
+              additionalButtons: nil)
         } else {
-          let alert = UIAlertController(title: "Success", message: "Password reset email has been sent.", preferredStyle: .Alert)
-          
-          alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-          
-          self.presentViewController(alert, animated: true, completion: nil)
+          self.showAlert("Success",
+                        message: "Password reset email has been sent.",
+             dismissButtonTitle: "Dismiss",
+              completionHandler: nil,
+              additionalButtons: nil)
         }
       })
     }

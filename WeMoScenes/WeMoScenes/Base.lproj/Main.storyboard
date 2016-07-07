@@ -521,7 +521,7 @@
             </objects>
             <point key="canvasLocation" x="937" y="-567"/>
         </scene>
-        <!--WeMo Scenes-->
+        <!--Mo Scenes-->
         <scene sceneID="UWb-Cu-b2M">
             <objects>
                 <tableViewController id="yb9-6J-F0p" customClass="SceneTableViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
@@ -578,7 +578,7 @@
                             <outlet property="delegate" destination="yb9-6J-F0p" id="Xo9-PL-lnS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="WeMo Scenes" id="6j3-Jn-iIv">
+                    <navigationItem key="navigationItem" title="Mo Scenes" id="6j3-Jn-iIv">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="2PV-SW-Pnt">
                             <connections>
                                 <segue destination="Afq-jd-gul" kind="presentation" identifier="settingsSegue" id="gu2-wN-Bzv"/>
@@ -758,11 +758,11 @@
                                 <rect key="frame" x="534" y="34" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-4I-JDg">
-                                <rect key="frame" x="20" y="64" width="560" height="528"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-4I-JDg">
+                                <rect key="frame" x="20" y="64" width="560" height="1082"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="WeMo Scenes - Version 1.0">
+                                    <fragment content="Mo Scenes - Version 1.0">
                                         <attributes>
                                             <font key="NSFont" size="18" name="Arial-BoldMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

@@ -420,6 +420,11 @@
 					E950D96B1D0270C5003DD7EE = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = G333CAMH6R;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E950D9821D0270C5003DD7EE = {
 						CreatedOnToolsVersion = 7.3.1;

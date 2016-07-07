@@ -95,7 +95,7 @@ class SceneEditorTableTableViewController:
     
     var sceneDeviceModel: SceneDeviceModel?
     
-    for var tempdevice in self.currentModel!.devices! {
+    for tempdevice in self.currentModel!.devices! {
       if (tempdevice.deviceId == device.UDN) {
         sceneDeviceModel = tempdevice
         break
