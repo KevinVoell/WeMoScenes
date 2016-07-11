@@ -13,7 +13,7 @@ class ForgotPasswordTableViewController: UITableViewController {
   @IBOutlet weak var emailAddressTextField: UITextField!
 
   @IBAction func resetPasswordTapped(sender: AnyObject) {
-    if emailAddressTextField.text.isEmpty {
+    if emailAddressTextField.text!.isEmpty {
       self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
 							   message: NSLocalizedString("EmailErrorMessage", comment: "Error message when email address is missing"),
                     dismissButtonTitle: NSLocalizedString("DimissTitle", comment: "Title for the dismiss button"),

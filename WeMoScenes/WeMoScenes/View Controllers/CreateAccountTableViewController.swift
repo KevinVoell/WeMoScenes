@@ -22,9 +22,10 @@ class CreateAccountTableViewController: UITableViewController {
                      dismissButtonTitle: NSLocalizedString("DimissTitle", comment: "Title for the dismiss button"),
                      completionHandler: nil,
                      additionalButtons: nil)
-    } else if passwordTextField.text! != confirmPasswordTextfield.text! {
+    } else if passwordTextField.text! != confirmPasswordTextfield.text!
+              || passwordTextField.text!.isEmpty {
       self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
-                     message: NSLocalizedString("PasswordMismatchErrorMessage", comment: "Error message when passwords don't match")
+                     message: NSLocalizedString("PasswordMismatchErrorMessage", comment: "Error message when passwords don't match"),
           dismissButtonTitle: NSLocalizedString("DimissTitle", comment: "Title for the dismiss button"),
            completionHandler: {
 								[unowned self] in
@@ -38,8 +39,8 @@ class CreateAccountTableViewController: UITableViewController {
         let credential = FIREmailPasswordAuthProvider.credentialWithEmail(emailTextField.text!, password: passwordTextField.text!)
         
         FIRAuth.auth()?.currentUser!.linkWithCredential(credential, completion: { 
-					(user, error) 
-					[unowned self] in
+					[unowned self]
+          (user, error) in
           self.handleAccountCreation(user, error: error)      
           self.dismissViewControllerAnimated(true, completion: nil)
         })

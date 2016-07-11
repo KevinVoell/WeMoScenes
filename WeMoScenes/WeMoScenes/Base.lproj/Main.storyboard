@@ -177,6 +177,33 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="SPV-8U-5qO">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pIa-IN-Sd7">
+                                        <rect key="frame" x="0.0" y="471" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pIa-IN-Sd7" id="RA0-Z4-rar">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ei-qy-cdk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <state key="normal" title="Privacy Policy"/>
+                                                    <connections>
+                                                        <segue destination="9Dg-90-91y" kind="show" id="1YG-V3-YBn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="topMargin" secondItem="1Ei-qy-cdk" secondAttribute="top" constant="8" id="7Zf-km-qo1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1Ei-qy-cdk" secondAttribute="bottom" constant="-8" id="Hf6-mB-yNj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1Ei-qy-cdk" secondAttribute="trailing" constant="-8" id="Jbb-to-1uK"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="1Ei-qy-cdk" secondAttribute="leading" constant="8" id="PLi-LL-Hdq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="EgG-Md-qSE" id="4PP-qH-59C"/>
@@ -424,6 +451,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu0-Ed-Tfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="842" y="-1293"/>
+        </scene>
+        <!--Privacy Policy-->
+        <scene sceneID="tyN-5p-bhY">
+            <objects>
+                <viewController title="Privacy Policy" id="9Dg-90-91y" customClass="PrivacyPolicyViewController" customModule="WeMoScenes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kFP-0P-zH7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ayW-vT-yBb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IAL-hx-4Ag">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2I-5W-NTP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F2I-5W-NTP" firstAttribute="top" secondItem="kFP-0P-zH7" secondAttribute="bottom" constant="-64" id="L7R-mx-8fP"/>
+                            <constraint firstItem="ayW-vT-yBb" firstAttribute="top" secondItem="F2I-5W-NTP" secondAttribute="bottom" id="cwd-n8-iqh"/>
+                            <constraint firstItem="F2I-5W-NTP" firstAttribute="leading" secondItem="IAL-hx-4Ag" secondAttribute="leadingMargin" constant="-20" id="d8f-x5-9J5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F2I-5W-NTP" secondAttribute="trailing" constant="-20" id="iOh-b0-xY2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="F2I-5W-NTP" id="YmY-M7-Jks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOJ-uo-ALH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="-2084"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="gb7-jP-YGX">
@@ -909,10 +969,59 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</string>
+SOFTWARE.
+
+</string>
                                         <attributes>
                                             <font key="NSFont" size="11" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="CCActivityHUD">
+                                        <attributes>
+                                            <font key="NSFont" size="13" name="Arial-BoldMT"/>
+                                            <font key="NSOriginalFont" size="13" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Copyright (c) 2016 Runqiu Xu.
+This code is distributed under the terms and conditions of the MIT license.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in the 
+Software without restriction, including without limitation the rights to use, copy, 
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the 
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="ArialMT"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>

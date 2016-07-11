@@ -10,7 +10,6 @@
 		E91390831D03D15200C8FA33 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E91390801D03D07600C8FA33 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E950D9701D0270C5003DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D96F1D0270C5003DD7EE /* AppDelegate.swift */; };
 		E950D9751D0270C5003DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E950D9731D0270C5003DD7EE /* Main.storyboard */; };
-		E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */; };
 		E950D97A1D0270C5003DD7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E950D9791D0270C5003DD7EE /* Assets.xcassets */; };
 		E950D97D1D0270C5003DD7EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */; };
 		E950D9881D0270C5003DD7EE /* WeMoScenesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950D9871D0270C5003DD7EE /* WeMoScenesTests.swift */; };
@@ -43,6 +42,7 @@
 		E98501BE1D26FDAA009DCAE7 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */; };
 		E98501C11D2C8B0C009DCAE7 /* AlertUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */; };
 		E98501C41D2DF857009DCAE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E98501C31D2DF857009DCAE7 /* Localizable.strings */; };
+		E98501C61D30A0A3009DCAE7 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98501C51D30A0A3009DCAE7 /* PrivacyPolicyViewController.swift */; };
 		EE3178FA16A460F99DAFD5DD /* Pods_WeMoScenes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A928C89C1EDCD07BADC66F /* Pods_WeMoScenes.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +87,6 @@
 		E950D96C1D0270C5003DD7EE /* WeMoScenes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeMoScenes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E950D96F1D0270C5003DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E950D9741D0270C5003DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeMoScenes.xcdatamodel; sourceTree = "<group>"; };
 		E950D9791D0270C5003DD7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E950D97C1D0270C5003DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E950D97E1D0270C5003DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +125,7 @@
 		E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		E98501C01D2C8B0C009DCAE7 /* AlertUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertUtilities.swift; path = Utilities/AlertUtilities.swift; sourceTree = "<group>"; };
 		E98501C31D2DF857009DCAE7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Localization/Localizable.strings; sourceTree = "<group>"; };
+		E98501C51D30A0A3009DCAE7 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +221,6 @@
 				E950D9791D0270C5003DD7EE /* Assets.xcassets */,
 				E950D97B1D0270C5003DD7EE /* LaunchScreen.storyboard */,
 				E950D97E1D0270C5003DD7EE /* Info.plist */,
-				E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */,
 				E96B4A5C1D0D011900F41579 /* GoogleService-Info.plist */,
 				E98501BD1D26FDAA009DCAE7 /* iTunesArtwork@2x.png */,
 			);
@@ -256,6 +255,7 @@
 				E95165531D1E065600D68504 /* CreateAccountTableViewController.swift */,
 				E95165551D1F726C00D68504 /* ForgotPasswordTableViewController.swift */,
 				E95165571D229F9F00D68504 /* CreditsViewController.swift */,
+				E98501C51D30A0A3009DCAE7 /* PrivacyPolicyViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -542,7 +542,6 @@
 				E96B4A571D0C2E9900F41579 /* WeMoMulticastHandler.swift in Sources */,
 				E96B4A651D0E502D00F41579 /* SwitchTableViewCell.swift in Sources */,
 				E951654A1D1A124000D68504 /* SceneTableViewCell.swift in Sources */,
-				E950D9781D0270C5003DD7EE /* WeMoScenes.xcdatamodeld in Sources */,
 				E95165561D1F726C00D68504 /* ForgotPasswordTableViewController.swift in Sources */,
 				E96B4A691D0FAE3200F41579 /* SwitchTableViewCellDelegate.swift in Sources */,
 				E950D9B61D030A38003DD7EE /* SceneEditorTableTableViewController.swift in Sources */,
@@ -555,6 +554,7 @@
 				E95165581D229F9F00D68504 /* CreditsViewController.swift in Sources */,
 				E95165501D1CD87000D68504 /* SigninTableViewController.swift in Sources */,
 				E96B4A401D0C2DD500F41579 /* DeviceModel.swift in Sources */,
+				E98501C61D30A0A3009DCAE7 /* PrivacyPolicyViewController.swift in Sources */,
 				E96B4A3E1D0C2DB800F41579 /* jsonSerializer.swift in Sources */,
 				E96B4A621D0D075300F41579 /* ManagerDelegate.swift in Sources */,
 				E951654C1D1AB3A400D68504 /* Array+Find.swift in Sources */,
@@ -843,19 +843,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E950D9761D0270C5003DD7EE /* WeMoScenes.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */,
-			);
-			currentVersion = E950D9771D0270C5003DD7EE /* WeMoScenes.xcdatamodel */;
-			path = WeMoScenes.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E950D9641D0270C5003DD7EE /* Project object */;
 }

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CCActivityHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>ChameleonFramework.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -82,7 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>318EE9B92AB78BD3939E21D31C870F5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>342ED8B688030AFB9C9CBE5DD1131F6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BB92EB81ED25DEC1EBF0EEA39E44B9C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A2B638B1B85AAD44DD9208A2E7599F4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AE84409F0FB6E53F68A9434AE0F45D6C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B1D17BA74BEACBD28F897F231B5907A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B37E19CA872A7535725D1E1946E5C271</key>
 		<dict>
 			<key>primary</key>
 			<true/>

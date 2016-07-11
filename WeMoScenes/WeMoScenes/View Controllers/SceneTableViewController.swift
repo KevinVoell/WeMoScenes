@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CCActivityHUD
 
 class SceneTableViewController: UITableViewController,
                                 ManagerDelegate {
@@ -42,7 +43,7 @@ class SceneTableViewController: UITableViewController,
   
   func handleRefresh(refreshControl: UIRefreshControl) {
     DeviceInteraction.sharedInstance.findDevices()
-
+    
     refreshControl.endRefreshing()
   }
   
@@ -91,9 +92,9 @@ class SceneTableViewController: UITableViewController,
   }
   
   override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Delete" , handler: { 
-		(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void 
-		[unowned self] in
+    let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Delete" , handler: {
+      [unowned self]
+      (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
       if indexPath.section == 0 {
         let item = self.databaseManager.items[indexPath.row]
         self.databaseManager.delete(item)
@@ -106,14 +107,15 @@ class SceneTableViewController: UITableViewController,
     deleteAction.backgroundColor = UIColor.redColor()
     
     if indexPath.section == 0 {
-      let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, 
+      let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal,
 											title: "Edit" , 
-										  handler: { 
-												(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void 
-														[unowned self] in
+										  handler: {
+                        [unowned self]
+												(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
 					
 														let item = self.databaseManager.items[indexPath.row]
-														self.performSegueWithIdentifier("editSceneSegue", sender: item)        
+													 	self.performSegueWithIdentifier("editSceneSegue", sender: item)
+                            self.tableView.setEditing(false, animated: true)
 													})
       
       return [deleteAction, editAction]
@@ -125,11 +127,11 @@ class SceneTableViewController: UITableViewController,
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segue.identifier! {
     case "newSceneSegue":
-      if let destinationViewController = segue.destinationViewController as! UINavigationController {
-				if let destination = destinationViewController.viewControllers[0] as! SceneEditorTableTableViewController {}
+      if let destinationViewController = segue.destinationViewController as? UINavigationController {
+				if let destination = destinationViewController.viewControllers[0] as?SceneEditorTableTableViewController {
 					destination.sceneManager = self.databaseManager
-				}
-			}
+        }
+      }
     
     case "editSceneSegue":
       if let destinationViewController = segue.destinationViewController as? UINavigationController {
@@ -148,6 +150,11 @@ class SceneTableViewController: UITableViewController,
     default:
         break
     }
+  }
+  
+  func showActivity() {
+    let v = CCActivityHUD()
+    v.show()
   }
   
   /**

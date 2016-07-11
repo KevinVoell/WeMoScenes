@@ -52,11 +52,12 @@ class SigninTableViewController: UITableViewController {
       }
       
       FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { 
-			(user, error) [unowned self] in
+        [unowned self]
+        (user, error) in
         if error != nil {
           self.showAlert(NSLocalizedString("ErrorTitle", comment: "Title for the error alert"),
-                       message: error!.localizedDescription,
-            dismissButtonTitle: NSLocalizedString("DismissButtonTitle", comment: "Title for the dismiss button")
+                       message: NSLocalizedString("InvalidUsernameOrPassword", comment: "Message for invalid username or password error"),
+            dismissButtonTitle: NSLocalizedString("DismissButtonTitle", comment: "Title for the dismiss button"),
              completionHandler: { 
 																	[unowned self] in 
 																	self.passwordTextField.text = "" 

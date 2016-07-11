@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '342ED8B688030AFB9C9CBE5DD1131F6F'
+               BlueprintIdentifier = 'A2B638B1B85AAD44DD9208A2E7599F4D'
                BlueprintName = 'Pods-WeMoScenes'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-WeMoScenes.framework'>

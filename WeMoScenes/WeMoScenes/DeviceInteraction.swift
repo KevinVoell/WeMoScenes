@@ -9,6 +9,7 @@
 import Foundation
 import SystemConfiguration
 import Firebase
+import CCActivityHUD
 
 public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
   
@@ -75,8 +76,13 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
     }
   }
   
+  static let v = CCActivityHUD()
+  
   internal static func setState(device: DeviceModel, state: DeviceModel.DeviceState) {
-        let soapAction = "\"\(soapActionBase)SetBinaryState\""
+    
+    v.showWithType(.ArcInCircle)
+    
+    let soapAction = "\"\(soapActionBase)SetBinaryState\""
     
     let intState = state == DeviceModel.DeviceState.On ? 1 : 0
     
@@ -88,12 +94,23 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
           if error != nil {
             // Oops something happened
             print(error?.localizedDescription)
+            
+            NSThread.sleepForTimeInterval(1)
+            dispatch_async(dispatch_get_main_queue(),{
+              v.dismissWithText("", delay: 1, success: false)
+            })
+            
             return;
           }
           
           let responseString = String(data: response!, encoding: NSUTF8StringEncoding)
           let parsedResponse = WemoStateResponse(xml: responseString!)
           print(parsedResponse)
+          
+          NSThread.sleepForTimeInterval(1)
+          dispatch_async(dispatch_get_main_queue(),{
+            v.dismiss()
+          })
         }
   }
   
@@ -165,7 +182,6 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
     
     return request
   }
-
   
   /*
    * Send the command and wait for the reponse.
@@ -179,7 +195,7 @@ public class DeviceInteraction : Interaction, WeMoDiscoveryDelegate {
     
     request.addValue(withSoapAction, forHTTPHeaderField: "SOAPACTION")
     request.HTTPBody = andSoapCommand.dataUsingEncoding(NSASCIIStringEncoding)
-    
+
     let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
       data, response, error in
       

@@ -8,7 +8,7 @@
 
 "ConfirmTitle" = "Confirm";
 
-"AnonymousAccountMessage" = "Creating an account allows you to create multiple scenes and share your scenes between multiple devices.\r\n\r\nContinue without creating an account?";
+"AnonymousAccountMessage" = "Creating an account allows you to share your scenes between multiple devices.\r\n\r\nContinue without creating an account?";
 
 "CancelTitle" = "Cancel";
 
@@ -43,3 +43,5 @@
 "EmailPasswordMissingMessage" = "Please enter your email address and password.";
 
 "AllSwitchesSceneTitle" = "All Switches";
+
+"InvalidUsernameOrPassword" = "Invalid username or password.";
